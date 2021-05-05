@@ -1,0 +1,37 @@
+@import './chart.css';
+
+:root{
+  --primary: #BDF5B1;
+  --primaryVariant: #55BE51;
+  --secondary: #FFF398;
+  --errorColor: #CF6679;
+  --TextWhite: #FFFFFF;
+  --TextBlack: #000000;
+  --white: #FFFFFF;
+  /*
+  --gray10: #B3B3B3;
+  --gray20: #737373;
+  --gray30: #282828;
+  --gray40: #181818;
+  */
+  --gray50:  linear-gradient(180deg, rgba(255, 255, 255, 0.38) 99.99%, rgba(255, 255, 255, 0) 100%), #121212;;
+  --gray80: #121212;
+  --backgroundColor: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%), #282828;
+
+  --basefontFamily: 'Lato';
+  --h1: normal 2.25rem/2.69rem var(--basefontFamily);
+  --h2: normal 1.625rem/1.94rem var(--basefontFamily);
+  --h3: normal 1.25rem/1.5rem var(--basefontFamily);
+  --paragraph: normal 1rem/1.18rem var(--basefontFamily);
+  --paragraphBold: bold 1rem/1.18rem var(--basefontFamily);
+  --TextButton: normal 1.5rem/1.81rem var(--basefontFamily);
+  --TextButtonBold: bold 1.5rem/1.81rem var(--basefontFamily);
+  --headline1: bold 4.5rem/5rem var(--basefontFamily);
+}
+
+.body {
+  background: var(--backgroundColor);
+  color: var(--TextWhite);
+  font: var(--paragraph);
+  margin: 0;
+}

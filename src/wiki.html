@@ -9,7 +9,9 @@
     <!-- typography Lato   -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap"
-      rel="stylesheet">
+    rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+
   </head>
   <body class="body">
     <nav class="menu">
@@ -50,15 +52,16 @@
         </div>
         <div class="info">
           <div class="info-chart">
-            <!-- TODO: Add radial chart -->
+            <canvas id="radarChart" width="400" height="400"></canvas>
+
           </div>
           <div class="info-chart">
-            <!-- TODO: Add chart -->
+            <canvas id="barChart" width="400" height="400"></canvas>
           </div>
 
         </div>
         <div class="info">
-          <p>Evolutions</p>
+          <p class="h2">Evolutions</p>
           <div class="evolutionCarrusel">
             <!-- TODO: Add Cards of Home -->
           </div>
@@ -66,5 +69,6 @@
       </div>
     </div>
     <script src="./js/main.js" type="module"></script>
+    <script src="./js/utils.js" type="module"></script>
   </body>
 </html>

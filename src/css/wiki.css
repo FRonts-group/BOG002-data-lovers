@@ -1,5 +1,11 @@
 
-
+.wrapper{
+  padding-inline: 2rem;
+ }
+.h2{
+  font: var(--h2);
+  margin: 0;
+}
 .info{
   align-items: center;
   margin-block: 2rem;
@@ -37,6 +43,15 @@
  padding-block-start: 1.5rem;
  padding-block-end: .5rem;
 }
+/* Style of chart */
+#radarChart, #barChart{
+  background: var(--white);
+  max-height: 22rem;
+  margin-block-end: 2rem;
+  padding: 1rem;
+  max-width: 100%;
+
+}
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
   .wrapper{
@@ -53,5 +68,8 @@
   }
   .info-text .title{
     font: var(--headline1);
+  }
+  #radarChart{
+    max-width: 22rem;
   }
 }

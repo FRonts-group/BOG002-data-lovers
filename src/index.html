@@ -12,9 +12,62 @@
       rel="stylesheet">
   </head>
   <body class="body">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quia debitis nobis molestias, dolorem recusandae facere quas iste repellendus id, veniam temporibus quod similique nostrum at. Quam rem vel cumque!</p>
-
-    <div id="root"></div>
+    <div id="root">
+      <header>
+        <div class="header-image--container">
+          <img src="/" alt="Logo Pokemon">
+        </div>
+        <div class="header-nav--container">
+          <nav>
+            <ul>
+              <li><span class="logo-container"></span><a href="#">Wiki</a></li>
+              <li><span class="logo-container"></span><a href="game.html">Game</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main class="wiki-main">
+        <!-- Info about the page and the search of pokemons -->
+        <section class="search--container">
+          <div class="search-instructions">
+            <h2>Welcome to</h2>
+            <h1>Wiki Pokemon</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt delectus, cupiditate enim possimus facere excepturi quidem laudantium obcaecati harum ullam deleniti maxime omnis natus in esse ut? Culpa, odit necessitatibus!</p>
+          </div>
+          <div class="search-input--container">
+            <span></span>
+            <input type="text" placeholder="Busca un pokemon...">
+          </div>
+        </section>
+        <!-- A list of suggested pokemons -->
+        <section class="suggested-pokemon--container">
+          <h2>Suggested Pokemons</h2>
+          <div class="cards-container">
+            <div class="pokemon-card">
+              <img src="/" alt="Pokemon">
+              <div class="pokemon-info--container">
+                <h3>Pokemon</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button>Ver más...</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Info about the game of pokemons -->
+        <section class="game-info--container">
+          <img src="/" alt="Imagen de batallas pokemon">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat dicta dolorem deserunt nisi. Officiis laudantium voluptatibus quasi, explicabo placeat facilis</p>
+          <button>JUGAR</button>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <p> <a href="#">WIKI</a> | <a href="game.html">GAME</a> </p>
+      <p>Collaborators...</p>
+      <a href="#">
+        <span class="logo-container"></span> Repositorio
+      </a>
+    </footer>
     <script src="./js/main.js" type="module"></script>
   </body>
 </html>

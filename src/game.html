@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wiki Pokemon</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/index.css" />
+  <!-- typography Lato   -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap"
+    rel="stylesheet">
+</head>
+<body>
+  <div id="root">
+    <header>
+      <div class="header-image--container">
+        <img src="/" alt="Logo Pokemon">
+      </div>
+      <div class="header-nav--container">
+        <nav>
+          <ul>
+            <li><span class="logo-container"></span><a href="#">Wiki</a></li>
+            <li><span class="logo-container"></span><a href="game.html">Game</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="game-main">
+      <!-- Pokemon duel -->
+      <section class="fight-container">
+        <div class="pokemon-fight-container">
+          <img src="/" alt="Pokemon1">
+          <h3>Pokemon 1</h3>
+        </div>
+        <h2>VS</h2>
+        <div class="pokemon-fight-container">
+          <img src="/" alt="Pokemon2">
+          <h3>Pokemon 2</h3>
+        </div>
+      </section>
+      <!-- Buttons to choice te winner with specific stat -->
+      <section class="choices--container">
+        <button>Pokemon 1 <span class="logo-container"></span></button>
+        <button>Pokemon 2 <span class="logo-container"></span></button>
+        <h2>Which one has more ...</h2>
+      </section>
+      <!-- Info about the game and score -->
+      <section class="game-info--container">
+        <p>How to play</p>
+        <p>Score: <span>X</span></p>
+      </section>
+    </main>
+  </div>
+  <footer>
+    <p> <a href="#">WIKI</a> | <a href="game.html">GAME</a> </p>
+    <p>Collaborators...</p>
+    <a href="#">
+      <span class="logo-container"></span> Repositorio
+    </a>
+  </footer>
+  <script src="./js/main.js" type="module"></script>
+</body>
+</html>

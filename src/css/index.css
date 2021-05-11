@@ -1,4 +1,5 @@
 @import './chart.css';
+@import './game.css';
 
 :root{
   --primary: #BDF5B1;
@@ -28,35 +29,26 @@
   --TextButtonBold: bold 1.5rem/1.81rem var(--basefontFamily);
   --headline1: bold 4.5rem/5rem var(--basefontFamily);
 }
-*{
-  box-sizing: border-box;
-}
 .body {
-  width: 100vw;
+  max-width: 100vw;
   background: var(--backgroundColor);
   background-repeat: no-repeat;
   color: var(--TextWhite);
   font: var(--paragraph);
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 /* General styles */
 h1{
   font: var(--h1);
-  margin: 0;
 }
 h2{
   font: var(--h2);
-  margin: 0;
 }
 h3{
   font: var(--h3);
-  margin: 0;
 }
 p {
   font: var(--paragraph);
-  margin: 0;
 }
 a {
   text-decoration: none;
@@ -73,9 +65,9 @@ a {
 }
 /* Header Styles */
 header{
-  max-width: 100%;
+  width: 90%;
   height: 55px;
-  padding: 0 10px;
+  padding: 0 5%;
   display: flex;
   justify-content: space-between;
   background: var(--primaryVariant);
@@ -106,224 +98,160 @@ header .header-nav--container nav ul li{
   display: flex;
   width: 75px;
 }
-header .header-nav--container #wiki-logo{
+header .header-nav--container #home-logo{
   background-image: url('../assets/icons/world.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 header .header-nav--container #game-logo{
   background-image: url('../assets/icons/cup.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 /* Styles for the home main */
-.wiki-main{
+.home-main{
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
 }
-.wiki-main .search--container{
+.home-main .search--container{
   width: 95%;
   max-width: 900px;
-  height: 250px;
   margin: 10px auto;
+  padding: 5px 0;
 }
-.wiki-main .search-instructions{
-  height: 85%;
+.home-main .search-instructions{
+  height: 50%;
   max-width: 650px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  margin: 5% auto;
   text-align: center;
 }
-.wiki-main .search-input--container{
+.home-main .search-instructions h2,
+.home-main .search-instructions h1,
+.home-main .search-instructions p{
+  margin: 10px 0;
+}
+.home-main .search-input--container{
   display: block;
   width: 100%;
   height: 40px;
   max-width: 560px;
-  margin: 0 auto;
+  margin: 5% auto;
   position: relative;
 }
-.wiki-main .search-input--container input{
-  width: 100%;
-  height: 40px;
+.home-main .search-input--container input{
+  width: 70%;
+  height: 36px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  z-index: 1;
   padding: 0 40px;
   border-radius: 25px;
   background-color: var(--white);
   font: var(--paragraph);
 }
-.wiki-main .search--container span{
+.home-main .search--container span{
   position: absolute;
-  top: 12px;
-  left: 14px;
+  top: 10px;
+  left: 8%;
+  z-index: 2;
   background-image: url('../assets/icons/search.svg');
   background-repeat: no-repeat;
   background-size: contain;
 }
-.wiki-main .suggested-pokemon--container{
+.home-main .suggested-pokemon--container{
   width: 95%;
-  height: 340px;
-  margin: 20px auto;
+  margin: 10px auto;
 }
-.wiki-main .suggested-pokemon--container .cards-container{
-  width: 100%;
-  height: 300px;
-  margin: 20px 0;
+.home-main .suggested-pokemon--container h2{
+  margin: 15px 0 10px 0;
+}
+.home-main .suggested-pokemon--container .cards-container{
+  height: 310px;
+  margin: 10px 0;
   display: flex;
   overflow-x: scroll;
   overscroll-behavior-x: contain;
-  /* scroll-snap-type: x proximity; */
 }
-.wiki-main .cards-container .pokemon-card{
-  width: 160px;
+.home-main .cards-container .pokemon-card{
+  min-width: 150px;
   height: 280px;
   margin: 0 5px;
   border-radius: 24px;
   background-color: var(--primary);
 }
-.wiki-main .cards-container .pokemon-card img{
-  width: 160px;
-  height: 160px;
-}
-.wiki-main .cards-container .pokemon-card .pokemon-info--container{
+.home-main .cards-container .pokemon-card img{
   width: 100%;
-  height: 120px;
-  padding: 5px 10px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+.home-main .cards-container .pokemon-card .pokemon-info--container{
+  width: 90%;
+  height: 130px;
+  padding: 5px 5% 0 5%;
   background-color: var(--secondary);
   color: var(--TextBlack);
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
 }
-.wiki-main .cards-container .pokemon-card .pokemon-info--container p{
-  font-size: 14px;
+.home-main .cards-container .pokemon-card .pokemon-info--container h3{
+  margin: 0px 0 2px 0;
 }
-.wiki-main .cards-container .pokemon-card .pokemon-info--container button{
-  width: 115px;
+.home-main .cards-container .pokemon-card .pokemon-info--container p{
+  font-size: 14px;
+  margin: 0 0 5px 0;
+}
+.home-main .cards-container .pokemon-card .pokemon-info--container button{
+  width: 80%;
   height: 30px;
-  margin: 2px 15px;
+  margin: 2px 0;
   border: 0;
+  display: block;
+  margin: 5px auto 0 auto;
   background-color: var(--primaryVariant);
   border-radius: 4px;
   font: var(--paragraphBold);
 }
-.wiki-main .game-info--container{
-  width: 100%;
+.home-main .game-info--container{
+  width: 90%;
   max-width: 875px;
-  height: 440px;
-  margin: 15px auto;
-  padding: 10px;
-  display: flex;
+  margin: 10px auto;
+  padding: 5%;
+  /* display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
-  border-radius: 8px;
+  align-items: center; */
   background-color: #121212;
 }
-.wiki-main .game-info--container p{
+.home-main .game-info--container h2{
+  margin: 10px 0;
+  text-align: center;
+}
+.home-main .game-info--container p{
   max-width: 500px;
+  margin: 10px auto 15px auto;
+  text-align: center;
 }
-.wiki-main .game-info--container img{
+.home-main .game-info--container img{
+  display: block;
   width: 269px;
-  margin: 0 auto;
+  margin: 5px auto 10px auto;
 }
-.wiki-main .game-info--container button{
+.home-main .game-info--container button{
+  display: block;
   width: 80%;
+  max-width: 400px;
   height: 50px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 12px 10px;
   border: 0;
   background-color: var(--primaryVariant);
   border-radius: 8px;
   font: var(--paragraphBold);
 }
-/* Game styles */
-.game-main{
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-.game-main .fight-container{
-  width: 90%;
-  margin: 20px auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.game-main .fight-container .pokemon-fight-container{
-  width: 45%;
-  margin: 10px;
-  align-self: flex-start;
-}
-.game-main .fight-container .pokemon-fight-container:nth-child(1){
-  align-self: flex-end;
-}
-.game-main .fight-container .pokemon-fight-container img{
-  width: 100%;
-  border-radius: 13px;
-  object-fit: contain;
-}
-.game-main .choices--container{
-  width: 95%;
-  max-width: 600px;
-  margin: 20px auto;
-}
-.game-main .choices--container button{
-  width: 95%;
-  height: 50px;
-  display: block;
-  margin: 5px auto;
-  padding: 5px 38px;
-  border-radius: 8px;
-  font: var(--h3);
-  text-align: center;
-}
-.game-main .choices--container #first{
-  background-color: var(--primary);
-}
-.game-main .choices--container #second{
-  background-color: var(--secondary);
-}
-.game-main .choices--container #first span{
-  background-image: url('../assets/icons/up-arrow.svg');
-}
-.game-main .choices--container #second span{
-  background-image: url('../assets/icons/down-arrow.svg');
-}
-.game-main .choices--container button span{
-  width: 25px;
-  height: 25px;
-  margin-left: 5px;
-  
-  background-position: center;
-  vertical-align: bottom;
-}
-.game-main .choices--container h3{
-  margin: 10px 0;
-  text-align: center;
-}
-.game-main .game-info--container{
-  width: 90%;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
-.game-main .game-info--container p{
-  margin: 15px 0;
-  font: var(--h2);
-}
-.game-main .game-info--container .logo-container{
-  width: 35px;
-  height: 35px;
-  background-image: url('../assets/icons/info.svg');
-  vertical-align: text-top;
-}
 /* Styles of footer */
 footer{
   width: 100%;
-  margin: 10px 0;
+  margin-top: 15px;
 }
 footer div{
   height: 30px;

@@ -14,7 +14,8 @@
 }
 .game-main .fight-container .pokemon-fight-container{
   width: 45%;
-  margin: 10px;
+  max-width: 300px;
+  margin: 5px;
   align-self: flex-start;
 }
 .game-main .fight-container .pokemon-fight-container:nth-child(1){
@@ -27,8 +28,8 @@
 }
 .game-main .choices--container{
   width: 95%;
-  max-width: 600px;
-  margin: 20px auto;
+  max-width: 800px;
+  margin: 15px auto;
 }
 .game-main .choices--container button{
   width: 95%;
@@ -36,6 +37,7 @@
   display: block;
   margin: 5px auto;
   padding: 5px 38px;
+  border: 0;
   border-radius: 8px;
   font: var(--h3);
   text-align: center;
@@ -59,7 +61,7 @@
   background-position: center;
   vertical-align: bottom;
 }
-.game-main .choices--container h3{
+.game-main h3{
   margin: 10px 0;
   text-align: center;
 }
@@ -77,4 +79,31 @@
   height: 35px;
   background-image: url('../assets/icons/info.svg');
   vertical-align: text-top;
+}
+@media only screen and (min-width: 425px) {
+  .game-main .fight-container h2{
+    margin: 5px 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .game-main .fight-container h2{
+    font-size: 35px;
+  }
+  .game-main .choices--container{
+    display: flex;
+  }
+  .game-main .choices--container button{
+    min-width: 48%;
+    margin: 5px 10px;
+  }
+  .game-main .game-info--container{
+    display: flex;
+    justify-content: space-between;
+  }
+  .game-main .game-info--container #howToPlay{
+    order: 1;
+  }
+  .game-main .game-info--container #score{
+    order: 2;
+  }
 }

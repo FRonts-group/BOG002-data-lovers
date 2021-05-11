@@ -41,6 +41,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* General styles */
 h1{
   font: var(--h1);
   margin: 0;
@@ -62,6 +63,15 @@ a {
   font: var(--paragraphBold);
   color: var(--TextBlack);
 }
+.logo-container{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* Header Styles */
 header{
   max-width: 100%;
   height: 55px;
@@ -96,12 +106,6 @@ header .header-nav--container nav ul li{
   display: flex;
   width: 75px;
 }
-.logo-container{
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-}
 header .header-nav--container #wiki-logo{
   background-image: url('../assets/icons/world.svg');
   background-repeat: no-repeat;
@@ -112,6 +116,7 @@ header .header-nav--container #game-logo{
   background-repeat: no-repeat;
   background-size: contain;
 }
+/* Styles for the home main */
 .wiki-main{
   width: 100%;
   max-width: 1100px;
@@ -130,7 +135,7 @@ header .header-nav--container #game-logo{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
 }
 .wiki-main .search-input--container{
@@ -212,9 +217,12 @@ header .header-nav--container #game-logo{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  text-align: center;
+  align-items: center;
   border-radius: 8px;
   background-color: #121212;
+}
+.wiki-main .game-info--container p{
+  max-width: 500px;
 }
 .wiki-main .game-info--container img{
   width: 269px;
@@ -230,6 +238,89 @@ header .header-nav--container #game-logo{
   border-radius: 8px;
   font: var(--paragraphBold);
 }
+/* Game styles */
+.game-main{
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.game-main .fight-container{
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.game-main .fight-container .pokemon-fight-container{
+  width: 45%;
+  margin: 10px;
+  align-self: flex-start;
+}
+.game-main .fight-container .pokemon-fight-container:nth-child(1){
+  align-self: flex-end;
+}
+.game-main .fight-container .pokemon-fight-container img{
+  width: 100%;
+  border-radius: 13px;
+  object-fit: contain;
+}
+.game-main .choices--container{
+  width: 95%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+.game-main .choices--container button{
+  width: 95%;
+  height: 50px;
+  display: block;
+  margin: 5px auto;
+  padding: 5px 38px;
+  border-radius: 8px;
+  font: var(--h3);
+  text-align: center;
+}
+.game-main .choices--container #first{
+  background-color: var(--primary);
+}
+.game-main .choices--container #second{
+  background-color: var(--secondary);
+}
+.game-main .choices--container #first span{
+  background-image: url('../assets/icons/up-arrow.svg');
+}
+.game-main .choices--container #second span{
+  background-image: url('../assets/icons/down-arrow.svg');
+}
+.game-main .choices--container button span{
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+  
+  background-position: center;
+  vertical-align: bottom;
+}
+.game-main .choices--container h3{
+  margin: 10px 0;
+  text-align: center;
+}
+.game-main .game-info--container{
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.game-main .game-info--container p{
+  margin: 15px 0;
+  font: var(--h2);
+}
+.game-main .game-info--container .logo-container{
+  width: 35px;
+  height: 35px;
+  background-image: url('../assets/icons/info.svg');
+  vertical-align: text-top;
+}
+/* Styles of footer */
 footer{
   width: 100%;
   margin: 10px 0;
@@ -268,4 +359,12 @@ footer #repository span{
   background-image: url('../assets/icons/github.svg');
   background-repeat: no-repeat;
   background-size: contain;
+}
+a:hover,
+footer #collaborators a:hover,
+footer #repository:hover{
+  color: var(--primary);
+}
+header a:hover{
+  color: var(--TextBlack);
 }

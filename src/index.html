@@ -15,13 +15,13 @@
     <div id="root">
       <header>
         <div class="header-image--container">
-          <img src="/" alt="Logo Pokemon">
+          <img src="./assets/images/pokemon-logo.png" alt="Logo Pokemon">
         </div>
         <div class="header-nav--container">
           <nav>
             <ul>
-              <li><span class="logo-container"></span><a href="#">Wiki</a></li>
-              <li><span class="logo-container"></span><a href="game.html">Game</a></li>
+              <li><span class="logo-container" id="wiki-logo"></span><a href="#">WIKI</a></li>
+              <li><span class="logo-container" id="game-logo"></span><a href="game.html">GAME</a></li>
             </ul>
           </nav>
         </div>
@@ -34,20 +34,60 @@
             <h1>Wiki Pokemon</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt delectus, cupiditate enim possimus facere excepturi quidem laudantium obcaecati harum ullam deleniti maxime omnis natus in esse ut? Culpa, odit necessitatibus!</p>
           </div>
-          <div class="search-input--container">
-            <span></span>
-            <input type="text" placeholder="Busca un pokemon...">
-          </div>
+          <label class="search-input--container" for="search">
+            <span class="logo-container"></span>
+            <input type="text" placeholder="Busca un pokemon..." id="search">
+          </label>
         </section>
         <!-- A list of suggested pokemons -->
         <section class="suggested-pokemon--container">
           <h2>Suggested Pokemons</h2>
           <div class="cards-container">
             <div class="pokemon-card">
-              <img src="/" alt="Pokemon">
+              <img src="./assets/images/charizard.png" alt="Pokemon">
               <div class="pokemon-info--container">
                 <h3>Pokemon</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button>Ver más...</button>
+              </div>
+            </div>
+            <div class="pokemon-card">
+              <img src="./assets/images/charizard.png" alt="Pokemon">
+              <div class="pokemon-info--container">
+                <h3>Pokemon</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button>Ver más...</button>
+              </div>
+            </div>
+            <div class="pokemon-card">
+              <img src="./assets/images/charizard.png" alt="Pokemon">
+              <div class="pokemon-info--container">
+                <h3>Pokemon</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button>Ver más...</button>
+              </div>
+            </div>
+            <div class="pokemon-card">
+              <img src="./assets/images/charizard.png" alt="Pokemon">
+              <div class="pokemon-info--container">
+                <h3>Pokemon</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button>Ver más...</button>
+              </div>
+            </div>
+            <div class="pokemon-card">
+              <img src="./assets/images/charizard.png" alt="Pokemon">
+              <div class="pokemon-info--container">
+                <h3>Pokemon</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button>Ver más...</button>
+              </div>
+            </div>
+            <div class="pokemon-card">
+              <img src="./assets/images/charizard.png" alt="Pokemon">
+              <div class="pokemon-info--container">
+                <h3>Pokemon</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                 <button>Ver más...</button>
               </div>
             </div>
@@ -55,17 +95,21 @@
         </section>
         <!-- Info about the game of pokemons -->
         <section class="game-info--container">
-          <img src="/" alt="Imagen de batallas pokemon">
+          <h2>Lorem Ipsum</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat dicta dolorem deserunt nisi. Officiis laudantium voluptatibus quasi, explicabo placeat facilis</p>
-          <button>JUGAR</button>
+          <img src="./assets/images/pokemon-game.jpg" alt="Imagen de batallas pokemon">
+          <button>PLAY</button>
         </section>
       </main>
     </div>
     <footer>
-      <p> <a href="#">WIKI</a> | <a href="game.html">GAME</a> </p>
-      <p>Collaborators...</p>
-      <a href="#">
-        <span class="logo-container"></span> Repositorio
+      <div> 
+        <a href="#">WIKI</a>
+        <a href="game.html">GAME</a>
+      </div>
+      <p id="collaborators">Made with ♥ by <a href="">Fabiola</a> and <a href="">Rodrigo</a> </p>
+      <a href="#" id="repository">
+        <span class="logo-container"></span> Check out our repository in Github
       </a>
     </footer>
     <script src="./js/main.js" type="module"></script>

@@ -1,12 +1,117 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>Wiki Pokemon</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css" />
+    <!-- typography Lato   -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet">
   </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
+  <body class="body">
+    <div id="root">
+      <header>
+        <div class="header-image--container">
+          <img src="./assets/images/pokemon-logo.png" alt="Logo Pokemon">
+        </div>
+        <div class="header-nav--container">
+          <nav>
+            <ul>
+              <li><a href="index.html"><span class="logo-container" id="home-logo"></span>WIKI</a></li>
+              <li><a href="game.html"><span class="logo-container" id="game-logo"></span>GAME</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main class="home-main">
+        <!-- Info about the page and the search of pokemons -->
+        <section class="search--container">
+          <div class="search-instructions">
+            <h2>Welcome to</h2>
+            <h1>Wiki Pokemon</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt delectus, cupiditate enim possimus facere excepturi quidem laudantium obcaecati harum ullam deleniti maxime omnis natus in esse ut? Culpa, odit necessitatibus!</p>
+          </div>
+          <label class="search-input--container" for="search">
+            <span class="logo-container"></span>
+            <input type="text" placeholder="Busca un pokemon..." id="search">
+          </label>
+        </section>
+        <!-- A list of suggested pokemons -->
+        <section class="suggested-pokemon--container">
+          <h2>Suggested Pokemons</h2>
+          <div class="cards-container">
+            <div class="pokemon-card">
+              <img src="./assets/images/charizard.png" alt="Pokemon">
+              <div class="pokemon-info--container">
+                <h3>Pokemon</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button>Ver más...</button>
+              </div>
+            </div>
+            <div class="pokemon-card">
+              <img src="./assets/images/charizard.png" alt="Pokemon">
+              <div class="pokemon-info--container">
+                <h3>Pokemon</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button>Ver más...</button>
+              </div>
+            </div>
+            <div class="pokemon-card">
+              <img src="./assets/images/charizard.png" alt="Pokemon">
+              <div class="pokemon-info--container">
+                <h3>Pokemon</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button>Ver más...</button>
+              </div>
+            </div>
+            <div class="pokemon-card">
+              <img src="./assets/images/charizard.png" alt="Pokemon">
+              <div class="pokemon-info--container">
+                <h3>Pokemon</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button>Ver más...</button>
+              </div>
+            </div>
+            <div class="pokemon-card">
+              <img src="./assets/images/charizard.png" alt="Pokemon">
+              <div class="pokemon-info--container">
+                <h3>Pokemon</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button>Ver más...</button>
+              </div>
+            </div>
+            <div class="pokemon-card">
+              <img src="./assets/images/charizard.png" alt="Pokemon">
+              <div class="pokemon-info--container">
+                <h3>Pokemon</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                <button>Ver más...</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Info about the game of pokemons -->
+        <section class="game-info--container">
+          <h2>Lorem Ipsum</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat dicta dolorem deserunt nisi. Officiis laudantium voluptatibus quasi, explicabo placeat facilis</p>
+          <img src="./assets/images/pokemon-game.jpg" alt="Imagen de batallas pokemon">
+          <button>PLAY</button>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <div>
+        <a href="index.html">WIKI</a>
+        <a href="game.html">GAME</a>
+      </div>
+      <p id="collaborators">Made with ♥ by <a href="https://github.com/fabiola29298">Fabiola</a> and <a href="https://github.com/rodrigojgq">Rodrigo</a> </p>
+      <a href="https://github.com/FRonts-group/wiki-pokemon" id="repository">
+        <span class="logo-container"></span> Check out our repository in Github
+      </a>
+    </footer>
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>

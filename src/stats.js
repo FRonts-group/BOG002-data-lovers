@@ -1,5 +1,6 @@
 class Stats {
-  constructor(hp, attack, defense, specialAttack, specialDefense, speed) {
+  constructor(idPokemon, hp, attack, defense, specialAttack, specialDefense, speed) {
+    this.idPokemon = idPokemon
     this.hp = hp;
     this.attack = attack;
     this.defense = defense;

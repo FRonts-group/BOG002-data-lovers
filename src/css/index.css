@@ -1,5 +1,6 @@
-@import './chart.css';
-@import './game.css';
+@import './chart.css'; 
+@import './wiki.css'; 
+@import './game.css'; 
 
 :root{
   --primary: #BDF5B1;

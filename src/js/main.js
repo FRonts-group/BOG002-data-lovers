@@ -1,6 +1,6 @@
-import { example } from './data.js';
-// import data from './data/lol/lol.js';
-import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
+import Pokemon from './pokemon.js';
+import Stats from './stats.js';
 // Probando pull request
-console.log(example, data);
+let pokemon = new Pokemon(1,'',1,1,1,'',1,1);
+let stats = new Stats(1,1,1,1,1,1,1);
+console.log(pokemon,stats);

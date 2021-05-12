@@ -1,5 +1,5 @@
 /** Class representing stats of a pokemon. */
-class Stats {
+export default class Stats {
   /**
    * Create stats of a pokemon.
    * @param {number} idPokemon - id of the pokemon.

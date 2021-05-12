@@ -1,5 +1,5 @@
   /** Class representing a pokemon. */
-  class Pokemon {
+export default class Pokemon {
     /**
      * Create a pokemon.
      * @param {number} id - The identifier.
@@ -22,3 +22,4 @@
     this.forms = forms;
   }
 }
+

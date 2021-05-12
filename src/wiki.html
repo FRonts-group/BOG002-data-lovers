@@ -14,60 +14,133 @@
 
   </head>
   <body class="body">
-    <nav class="menu">
-      <!-- TODO: Add menu   -->
-    </nav>
-    <div class="wrapper">
-      <div class="search">
-        <!-- TODO: Add board -->
+    <header>
+      <div class="header-image--container">
+        <img src="./assets/images/pokemon-logo.png" alt="Logo Pokemon">
       </div>
-      <div class="content">
-        <div class="info">
-          <div class="info-img">
-            <img src="./img/prueba.png" alt="Image of a pokemon">
-          </div>
-          <div class="info-text">
-            <p class="title">Lorem ipsum dolor sit</p>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum, ex sed maximus condimentum, tellus ipsum
-            varius tellus, mattis accumsan urna risus elementum lacus.</p>
-            <table >
-              <tr>
-                <td class="info-subtitle">Subtitle 1</td>
-                <td class="info-subtitleContent">Lorem ipsum dolor sit amet, consectetur</td>
-              </tr>
-              <tr>
-                <td class="info-subtitle">Subtitle 1</td>
-                <td class="info-subtitleContent">Lorem ipsum dolor sit amet, consectetur</td>
-              </tr>
-              <tr>
-                <td class="info-subtitle">Subtitle 1</td>
-                <td class="info-subtitleContent">Lorem ipsum dolor sit amet, consectetur</td>
-              </tr>
-              <tr>
-                <td class="info-subtitle">Subtitle 1</td>
-                <td class="info-subtitleContent">Lorem ipsum dolor sit amet, consectetur</td>
-              </tr>
-            </table>
-          </div>
+      <div class="header-nav--container">
+        <nav>
+          <ul>
+            <li><a href="index.html"><span class="logo-container" id="home-logo"></span>WIKI</a></li>
+            <li><a href="game.html"><span class="logo-container" id="game-logo"></span>GAME</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main  class="home-main">
+      <div class="wrapper">
+        <div class="search">
+          <label class="search-input--container" for="search">
+            <span class="logo-container"></span>
+            <input type="text" placeholder="Busca un pokemon..." id="search">
+          </label>
         </div>
-        <div class="info">
-          <div class="info-chart">
-            <canvas id="radarChart" width="400" height="400"></canvas>
-
+        <div class="content">
+          <div class="info">
+            <div class="info-img">
+              <img src="./img/prueba.png" alt="Image of a pokemon">
+            </div>
+            <div class="info-text">
+              <p class="title">Lorem ipsum dolor sit</p>
+              <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum, ex sed maximus condimentum, tellus ipsum
+              varius tellus, mattis accumsan urna risus elementum lacus.</p>
+              <table >
+                <tr>
+                  <td class="info-subtitle">Subtitle 1</td>
+                  <td class="info-subtitleContent">Lorem ipsum dolor sit amet, consectetur</td>
+                </tr>
+                <tr>
+                  <td class="info-subtitle">Subtitle 1</td>
+                  <td class="info-subtitleContent">Lorem ipsum dolor sit amet, consectetur</td>
+                </tr>
+                <tr>
+                  <td class="info-subtitle">Subtitle 1</td>
+                  <td class="info-subtitleContent">Lorem ipsum dolor sit amet, consectetur</td>
+                </tr>
+                <tr>
+                  <td class="info-subtitle">Subtitle 1</td>
+                  <td class="info-subtitleContent">Lorem ipsum dolor sit amet, consectetur</td>
+                </tr>
+              </table>
+            </div>
           </div>
-          <div class="info-chart">
-            <canvas id="barChart" width="400" height="400"></canvas>
+          <div class="info">
+            <div class="info-chart">
+              <canvas id="radarChart" width="400" height="400"></canvas>
+            </div>
+            <div class="info-chart">
+              <canvas id="barChart" width="400" height="400"></canvas>
+            </div>
           </div>
-
-        </div>
-        <div class="info">
-          <p class="h2">Evolutions</p>
-          <div class="evolutionCarrusel">
-            <!-- TODO: Add Cards of Home -->
+          <div class="info">
+            <p class="h2">Evolutions</p>
+            <div class="evolutionCarrusel">
+              <div class="cards-container">
+                <div class="pokemon-card">
+                  <img src="./assets/images/charizard.png" alt="Pokemon">
+                  <div class="pokemon-info--container">
+                    <h3>Pokemon</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Ver más...</button>
+                  </div>
+                </div>
+                <div class="pokemon-card">
+                  <img src="./assets/images/charizard.png" alt="Pokemon">
+                  <div class="pokemon-info--container">
+                    <h3>Pokemon</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Ver más...</button>
+                  </div>
+                </div>
+                <div class="pokemon-card">
+                  <img src="./assets/images/charizard.png" alt="Pokemon">
+                  <div class="pokemon-info--container">
+                    <h3>Pokemon</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Ver más...</button>
+                  </div>
+                </div>
+                <div class="pokemon-card">
+                  <img src="./assets/images/charizard.png" alt="Pokemon">
+                  <div class="pokemon-info--container">
+                    <h3>Pokemon</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Ver más...</button>
+                  </div>
+                </div>
+                <div class="pokemon-card">
+                  <img src="./assets/images/charizard.png" alt="Pokemon">
+                  <div class="pokemon-info--container">
+                    <h3>Pokemon</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Ver más...</button>
+                  </div>
+                </div>
+                <div class="pokemon-card">
+                  <img src="./assets/images/charizard.png" alt="Pokemon">
+                  <div class="pokemon-info--container">
+                    <h3>Pokemon</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <button>Ver más...</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
+    <footer>
+      <div>
+        <a href="index.html">WIKI</a>
+        <a href="game.html">GAME</a>
+      </div>
+      <p id="collaborators">Made with ♥ by <a href="https://github.com/fabiola29298">Fabiola</a> and <a
+          href="https://github.com/rodrigojgq">Rodrigo</a> </p>
+      <a href="https://github.com/FRonts-group/wiki-pokemon" id="repository">
+        <span class="logo-container"></span> Check out our repository in Github
+      </a>
+    </footer>
     <script src="./js/main.js" type="module"></script>
     <script src="./js/utils.js" type="module"></script>
   </body>

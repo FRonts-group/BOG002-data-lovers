@@ -169,26 +169,26 @@ header .header-nav--container #game-logo{
 .home-main .suggested-pokemon--container h2{
   margin: 15px 0;
 }
-.home-main .suggested-pokemon--container .cards-container{
+.cards-container{
   height: 310px;
   margin: 10px 0;
   display: flex;
   overflow-x: scroll;
   overscroll-behavior-x: contain;
 }
-.home-main .cards-container .pokemon-card{
+.cards-container .pokemon-card{
   min-width: 150px;
   height: 280px;
   margin: 0 5px;
   border-radius: 24px;
   background-color: var(--primary);
 }
-.home-main .cards-container .pokemon-card img{
+.cards-container .pokemon-card img{
   width: 100%;
   object-fit: contain;
   margin-bottom: 10px;
 }
-.home-main .cards-container .pokemon-card .pokemon-info--container{
+.cards-container .pokemon-card .pokemon-info--container{
   width: 90%;
   height: 130px;
   padding: 5px 5% 0 5%;
@@ -197,14 +197,14 @@ header .header-nav--container #game-logo{
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
 }
-.home-main .cards-container .pokemon-card .pokemon-info--container h3{
+.cards-container .pokemon-card .pokemon-info--container h3{
   margin: 0px 0 2px 0;
 }
-.home-main .cards-container .pokemon-card .pokemon-info--container p{
+.cards-container .pokemon-card .pokemon-info--container p{
   font-size: 14px;
   margin: 0 0 5px 0;
 }
-.home-main .cards-container .pokemon-card .pokemon-info--container button{
+.cards-container .pokemon-card .pokemon-info--container button{
   width: 80%;
   height: 30px;
   margin: 2px 0;
@@ -309,16 +309,16 @@ header a:hover{
     width: 96%;
     padding: 2%;
   }
-  .home-main .suggested-pokemon--container .cards-container::-webkit-scrollbar {
+  .cards-container::-webkit-scrollbar {
     width: 1em;
     height: 5px;
   }
-  .home-main .suggested-pokemon--container .cards-container::-webkit-scrollbar-track {
+  .cards-container::-webkit-scrollbar-track {
     border-radius: 5px;
     box-shadow: inset 0 0 6px rgba(22, 22, 22, 0.3);
     -webkit-box-shadow: inset 0 0 6px rgba(22, 22, 22, 0.3);
   }
-  .home-main .suggested-pokemon--container .cards-container::-webkit-scrollbar-thumb {
+  .cards-container::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: var(--primary);
     outline: 2px solid rgb(147, 167, 187);
@@ -343,7 +343,7 @@ header a:hover{
     height: 30px;
     top: 11px;
   }
-  .home-main .suggested-pokemon--container .cards-container{
+  .cards-container{
     height: 320px;
   }
   .home-main .game-info--container{

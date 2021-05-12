@@ -16,7 +16,9 @@
   <body class="body">
     <header>
       <div class="header-image--container">
-        <img src="./assets/images/pokemon-logo.png" alt="Logo Pokemon">
+        <a href="index.html" aria-current="page">
+          <img src="./assets/images/pokemon-logo.png" alt="Logo Pokemon">
+        </a>
       </div>
       <div class="header-nav--container">
         <nav>
@@ -29,7 +31,7 @@
     </header>
     <main  class="home-main">
       <div class="wrapper">
-        <div class="search">
+        <div class="search--container">
           <label class="search-input--container" for="search">
             <span class="logo-container"></span>
             <input type="text" placeholder="Busca un pokemon..." id="search">
@@ -73,8 +75,8 @@
             </div>
           </div>
           <div class="info">
-            <p class="h2">Evolutions</p>
-            <div class="evolutionCarrusel">
+            <div class="suggested-pokemon--container">
+              <p class="h2">Evolutions</p>
               <div class="cards-container">
                 <div class="pokemon-card">
                   <img src="./assets/images/charizard.png" alt="Pokemon">

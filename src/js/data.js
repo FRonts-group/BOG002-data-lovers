@@ -1,6 +1,7 @@
 
 /**
    * Get a pokemon by id
+   * @param {string} - The id of a pokemon.
    * @return {pokemon} A pokemon object.
    */
 export const getPokemon = (id) => {
@@ -8,6 +9,7 @@ export const getPokemon = (id) => {
 }
 /**
  * Get X amount of pokemons
+ * @param {number} - The amount of pokemon.
  * @return {array[pokemon]} A list of pokemon objects.
  */
 export const getPokemons = (str) => {
@@ -15,6 +17,7 @@ export const getPokemons = (str) => {
 }
 /**
  * Get pokemons by type
+ * @param {string} - A type.
  * @return {array[pokemon]} A list of pokemon objects of the same type.
  */
 export const getPokemonsbyType = (type) => {

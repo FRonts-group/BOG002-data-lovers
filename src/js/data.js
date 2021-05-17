@@ -15,12 +15,13 @@ import Stats from './stats.js';
       const { id, name, height, weight, abilities, types, forms, sprites } = await resp.json();
 
       //Get only the elements you need from each tribute.
+      let nameNew = name.replace(/\b\w/g, l => l.toUpperCase());
       let abilitiesNew = []; let typesNew = []; let formsNew = [];
       abilities.forEach(element => abilitiesNew.push(element.ability.name));
       types.forEach(element => typesNew.push(element.type.name));
       forms.forEach(element => formsNew.push(element.name));
-      let pokemon = new Pokemon(parseInt(id), name, fromHectograms(height), fromDecimeters(weight),
-        abilitiesNew, sprites.back_default, typesNew, formsNew);
+      let pokemon = new Pokemon(parseInt(id), nameNew, fromHectograms(height), fromDecimeters(weight),
+        abilitiesNew, sprites.front_default, typesNew, formsNew);
 
       return pokemon;
     }

@@ -7,7 +7,7 @@ console.log( await getPokemon(12));
 // New pokemon-stats id 12
 console.log(await getPokemonStats(12));
 // 4 pokemons for the carrusel
-let lots = await getPokemons(4);
+let lots = await getPokemons(4,8);
 console.log(lots);
 
 // Probando pull request
@@ -18,7 +18,7 @@ console.log(lots);
 
 // show the carousel in index
 let amountSuggestions = 8;
-let suggestions = await getPokemons(amountSuggestions);
+let suggestions = await getPokemons(120, amountSuggestions);
 let containerCarousel = document.querySelector('#suggested-pokemon');
 for (let item of suggestions){
 

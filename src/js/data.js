@@ -79,9 +79,9 @@ export const getPokemonStats = async (idPokemon) => {
  * @param {array[number]} - An array of pokemon ids
  * @return {array[pokemon]} A list of pokemon objects.
  */
-export const getPokemons = async (x) => {
+export const getPokemons = async (idPokemon, amount) => {
   let pokemons = [];
-  for(  let i=1 ; i <= x ; i++){
+  for (let i = idPokemon; i <= idPokemon+amount ; i++){
     let pokemon = await getPokemon(i);
     pokemons.push(pokemon);
   }

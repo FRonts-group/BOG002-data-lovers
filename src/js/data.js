@@ -110,7 +110,7 @@ export const getRandomPokemons = () => {
    * @return {number} - The weight in kilograms.
    */
 const fromHectograms = (hect) => {
-  return hect/10;
+  return hect*10;
 }
   /**
    * Convert the height of decimetres to centimeters.
@@ -118,5 +118,5 @@ const fromHectograms = (hect) => {
    * @return {number} - The height in centimeters.
    */
 const fromDecimeters = (dec) => {
-  return dec*10;
+  return dec/10;
 }

@@ -2,8 +2,9 @@ import { getRandomPokemons, getPokemonStats} from './data.js';
 
 const pokemonContainer1 = document.querySelector('#pokemon1');
 const pokemonContainer2 = document.querySelector('#pokemon2');
-const pokemon1Button = document.getElementById('second');
-const pokemon2Button = document.getElementById('first');
+const pokemon1Button = document.getElementById('first');
+const pokemon2Button = document.getElementById('second');
+const answerCotainer = document.getElementById('correct-answer');
 const spanScore = document.querySelector('#spanScore');
 const statContainer = document.querySelector('#statCompared');
 let pokemon1;
@@ -26,6 +27,9 @@ const changeFighter = (pokemon, pokemonContainer, pokemonButton) => {
   pokemonButton.innerHTML =`${pokemonName}<span class="logo-container" ></span>`;
 };
 
+/*
+ * Change the compared stat in the page and saves the pokemon's stat to be compared
+*/
 const changeComparedStat = (comparedStat) =>{
   const statsName = ["Health Points", "Attack Points", "Defense Points", "Special Attack Points", "Special Defense Points", "Speed Points"];
   statContainer.innerHTML = `Which pokemon has more ${statsName[comparedStat]}`;
@@ -33,6 +37,17 @@ const changeComparedStat = (comparedStat) =>{
   pokemon2ComparedStat = Object.values(pokemon2Stats)[comparedStat];
 }
 
+const showCorrectAnswer = (answer) => {
+  if(answer === 0){
+    answerCotainer.innerHTML = "Wrong Answer";
+    answerCotainer.classList.remove('correct')
+    answerCotainer.classList.add('wrong')
+  }else{
+    answerCotainer.innerHTML = "Correct Answer";
+    answerCotainer.classList.remove('wrong')
+    answerCotainer.classList.add('correct')
+  }
+};
 /*
  * Get the Fighters and their stats
 */
@@ -65,7 +80,9 @@ const verifyChoice = (selectedButton, stat1, stat2) => {
 const scoreIncreaser = () =>{
   let score = 0;
   const scoreIncrease = (selectedButton) => {
-    score = score + verifyChoice(selectedButton, pokemon1ComparedStat, pokemon2ComparedStat);
+    const answer = verifyChoice(selectedButton, pokemon1ComparedStat, pokemon2ComparedStat);
+    showCorrectAnswer(answer);
+    score = score + answer;
     spanScore.innerHTML = score;
   }
   return scoreIncrease;
@@ -76,12 +93,22 @@ const scoreChange = scoreIncreaser();
 
 pokemon1Button.addEventListener('click', function() {
   scoreChange(0);
-  getFighters()
+  setTimeout(() => {
+    getFighters()
+    answerCotainer.innerHTML = "VS";
+    answerCotainer.classList.remove('wrong');
+    answerCotainer.classList.remove('correct');
+  }, 1000);
 });
 
 pokemon2Button.addEventListener('click', () => {
   scoreChange(1);
-  getFighters()
+  setTimeout(() => {
+    answerCotainer.innerHTML = "VS";
+    answerCotainer.classList.remove('wrong');
+    answerCotainer.classList.remove('correct');
+    getFighters()
+  }, 1000);
 });
 
 getFighters()

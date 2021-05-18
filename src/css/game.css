@@ -26,6 +26,12 @@
   border-radius: 13px;
   object-fit: contain;
 }
+.game-main .fight-container .wrong{
+  color: var(--errorColor);
+}
+.game-main .fight-container .correct{
+  color: var(--primary);
+}
 .game-main .choices--container{
   width: 95%;
   max-width: 800px;
@@ -105,5 +111,15 @@
   }
   .game-main .game-info--container #score{
     order: 2;
+  }
+  .game-main .choices--container #first{
+    background-color: var(--secondary);
+    order: 1;
+  }
+  .game-main .choices--container #second{
+    background-color: var(--primary);
+  }
+  .game-main .choices--container button span{
+    display: none;
   }
 }

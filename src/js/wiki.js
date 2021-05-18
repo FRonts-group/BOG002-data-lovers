@@ -92,6 +92,7 @@ const showSuggestedPokemons = async () => {
     <img src=${item.image} alt="Pokemon">
     <div class="pokemon-info--container">
     <h3>${item.name}</h3>
+    <p>Type: ${item.types[0]} <br>
     Height: ${item.height} cm <br>
     Weight: ${item.weight} kg </p>
     <button>More</button>

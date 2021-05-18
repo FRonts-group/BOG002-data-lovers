@@ -50,6 +50,7 @@ h3{
 }
 p {
   font: var(--paragraph);
+  line-height: 1.5rem;
 }
 a {
   text-decoration: none;
@@ -130,12 +131,15 @@ header .header-nav--container #game-logo{
 .home-main .search-instructions p{
   margin: 10px 0;
 }
+.home-main .search-instructions h1{
+  font: var(--headline1);
+}
 .home-main .search-input--container{
   display: block;
   width: 100%;
   height: 40px;
   max-width: 560px;
-  margin: 3% auto;
+  margin: 7% auto 3% auto;
   position: relative;
 }
 .home-main .search-input--container input{
@@ -157,6 +161,7 @@ header .header-nav--container #game-logo{
   position: absolute;
   top: 10px;
   left: 7%;
+  right: 90%;
   z-index: 2;
   background-image: url('../assets/icons/search.svg');
   background-repeat: no-repeat;
@@ -167,10 +172,10 @@ header .header-nav--container #game-logo{
   margin: 10px auto;
 }
 .home-main .suggested-pokemon--container h2{
-  margin: 15px 0;
+  margin: 20px 0 15px 0;
 }
 .cards-container{
-  height: 310px;
+  height: 340px;
   margin: 10px 0;
   display: flex;
   overflow-x: scroll;
@@ -178,7 +183,7 @@ header .header-nav--container #game-logo{
 }
 .cards-container .pokemon-card{
   min-width: 150px;
-  height: 280px;
+  height: 94%;
   margin: 0 5px;
   border-radius: 24px;
   background-color: var(--primary);
@@ -189,28 +194,28 @@ header .header-nav--container #game-logo{
   margin-bottom: 10px;
 }
 .cards-container .pokemon-card .pokemon-info--container{
-  width: 90%;
-  height: 130px;
-  padding: 5px 5% 0 5%;
+  width: 85%;
+  height: 47.5%;
+  padding: 5px 5% 0 10%;
   background-color: var(--secondary);
   color: var(--TextBlack);
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
 }
 .cards-container .pokemon-card .pokemon-info--container h3{
-  margin: 0px 0 2px 0;
+  font: var(--paragraphBold);
+  margin: 5px 0 2px 0;
 }
 .cards-container .pokemon-card .pokemon-info--container p{
-  font-size: 14px;
   margin: 0 0 5px 0;
+  line-height: 1.2rem;
 }
 .cards-container .pokemon-card .pokemon-info--container button{
   width: 80%;
   height: 30px;
-  margin: 2px 0;
   border: 0;
   display: block;
-  margin: 5px auto 0 auto;
+  margin: 15px 12% 0 8%;
   background-color: var(--primaryVariant);
   border-radius: 4px;
   font: var(--paragraphBold);
@@ -220,10 +225,6 @@ header .header-nav--container #game-logo{
   max-width: 768px;
   margin: 25px auto;
   padding: 5%;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center; */
   background-color: #121212;
 }
 .home-main .game-info--container h2{
@@ -231,7 +232,7 @@ header .header-nav--container #game-logo{
   text-align: center;
 }
 .home-main .game-info--container p{
-  max-width: 500px;
+  max-width: 450px;
   margin: 10px auto 15px auto;
   text-align: center;
 }
@@ -250,7 +251,8 @@ header .header-nav--container #game-logo{
   border: 0;
   background-color: var(--primaryVariant);
   border-radius: 8px;
-  font: var(--paragraphBold);
+  font: var(--h3);
+  font-weight: bold;
 }
 /* Styles of footer */
 footer{
@@ -304,6 +306,7 @@ header a:hover{
   .home-main .search--container span {
     top: 10px;
     left: 9%;
+    right: 90%;
   }
   .home-main .game-info--container{
     width: 96%;
@@ -344,7 +347,16 @@ header a:hover{
     top: 11px;
   }
   .cards-container{
-    height: 320px;
+    height: 400px;
+  }
+  .cards-container .pokemon-card{
+    min-width: 200px;
+  }
+  .cards-container .pokemon-card .pokemon-info--container{
+    height: 41.5%;
+  }
+  .cards-container .pokemon-card .pokemon-info--container p{
+    line-height: 1.4rem;
   }
   .home-main .game-info--container{
     border-radius: 14px;

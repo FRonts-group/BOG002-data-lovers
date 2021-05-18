@@ -1,33 +1,51 @@
-import getRandomPokemons from '../src/js/data.js';
-import Pokemon from '../src/js/pokemon.js';
-import Stats from './stats.js';
+import { getRandomPokemons, getPokemonStats} from './data.js';
+
 const pokemonContainer1 = document.querySelector('#pokemon1');
 const pokemonContainer2 = document.querySelector('#pokemon2');
-const pokemon1Button = document.querySelector('#first')
-const pokemon2Button = document.querySelector('#second')
+const pokemon1Button = document.getElementById('second');
+const pokemon2Button = document.getElementById('first');
 const spanScore = document.querySelector('#spanScore');
-let pokemon1 = new Pokemon(1,'',1,1,1,'',1,1);
-let pokemon2 = new Pokemon(1,'',1,1,1,'',1,1);
-let pokemon1Stats = new Stats(1,1,1,1,1,1,1);
-let pokemon2Stats = new Stats(1,1,1,1,1,1,1);
+const statContainer = document.querySelector('#statCompared');
+let pokemon1;
+let pokemon2;
+let pokemon1Stats;
+let pokemon2Stats;
+let pokemon1ComparedStat = 0;
+let pokemon2ComparedStat = 0;
 
-const changeFighter = (pokemon, pokemonContainer) => {
+/*
+ * Change the fighter in the page
+*/
+const changeFighter = (pokemon, pokemonContainer, pokemonButton) => {
   const imageUrl = pokemon.image;
   const pokemonName =  pokemon.name;
   pokemonContainer.innerHTML = `
     <img src="${imageUrl}" alt="Pokemon1">
     <h3>${pokemonName}</h3>
   `
+  pokemonButton.innerHTML =`${pokemonName}<span class="logo-container" ></span>`;
 };
 
-const getFighters = (n) => {
-  let pokemons = getRandomPokemons(n);
+const changeComparedStat = (comparedStat) =>{
+  const statsName = ["Health Points", "Attack Points", "Defense Points", "Special Attack Points", "Special Defense Points", "speed"];
+  statContainer.innerHTML = `Which pokemon has more ${statsName[comparedStat]}`;
+  pokemon1ComparedStat = Object.values(pokemon1Stats)[comparedStat];
+  pokemon2ComparedStat = Object.values(pokemon2Stats)[comparedStat];
+}
+
+/*
+ * Get the Fighters and their stats
+*/
+const getFighters = async () => {
+  let pokemons = await getRandomPokemons(2);
   pokemon1 = pokemons[0];
   pokemon2 = pokemons[1];
-  pokemon1Stats = getPokemonStats(pokemon1.id);
-  pokemon2Stats = getPokemonStats(pokemon2.id);
-  changeFighter(pokemon1, pokemonContainer1);
-  changeFighter(pokemon2, pokemonContainer2);
+  pokemon1Stats = await getPokemonStats(pokemon1.id);
+  pokemon2Stats = await getPokemonStats(pokemon2.id);
+  changeFighter(pokemon1, pokemonContainer1, pokemon1Button);
+  changeFighter(pokemon2, pokemonContainer2, pokemon2Button);
+  let comparedStat = Math.floor(Math.random() * 6);
+  changeComparedStat(comparedStat);
 }
 
 const verifyChoice = (selectedButton, stat1, stat2) => {
@@ -47,7 +65,7 @@ const verifyChoice = (selectedButton, stat1, stat2) => {
 const scoreIncreaser = () =>{
   let score = 0;
   const scoreIncrease = (selectedButton) => {
-    score = score + verifyChoice(selectedButton, pokemon1Stats, pokemon2Stats);
+    score = score + verifyChoice(selectedButton, pokemon1ComparedStat, pokemon2ComparedStat);
     spanScore.innerHTML = score;
   }
   return scoreIncrease;
@@ -55,13 +73,15 @@ const scoreIncreaser = () =>{
 
 const scoreChange = scoreIncreaser();
 
-pokemon1Button,addEventListener('click', () => {
-  scoreChange(1);
-  getFighters(2);
+
+pokemon1Button.addEventListener('click', function() {
+  scoreChange(0);
+  getFighters()
 });
 
-pokemon2Button,addEventListener('click', () => {
-  scoreChange(2);
-  getFighters(2);
+pokemon2Button.addEventListener('click', () => {
+  scoreChange(1);
+  getFighters()
 });
-getFighters(2)
+
+getFighters()

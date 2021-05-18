@@ -101,6 +101,11 @@ export const getPokemonsbyType = async (amount, type) => {
     const resp = await fetch(typeUrl);
     if (!resp.ok) throw 'The request could not be fulfilled';
     let { pokemon } = await resp.json();
+    //  Shuffle the pokemon array
+    for (let i = pokemon.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pokemon[i], pokemon[j]] = [pokemon[j], pokemon[i]];
+    }
     pokemon = pokemon.slice(0,amount);
     pokemonNameList = pokemon.map((element) => element.pokemon.name);
   }

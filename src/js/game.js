@@ -5,6 +5,9 @@ const pokemonContainer2 = document.querySelector('#pokemon2');
 const pokemon1Button = document.getElementById('first');
 const pokemon2Button = document.getElementById('second');
 const answerCotainer = document.getElementById('correct-answer');
+const instructionsCotainer = document.getElementById('instructions-container');
+const howToPlay = document.getElementById('howToPlay');
+const instructionsButton = document.getElementById('intruction-hide-button');
 const spanScore = document.querySelector('#spanScore');
 const statContainer = document.querySelector('#statCompared');
 let pokemon1;
@@ -90,25 +93,34 @@ const scoreIncreaser = () =>{
 
 const scoreChange = scoreIncreaser();
 
+const newFight = async () => {
+  await getFighters()
+  answerCotainer.innerHTML = "VS";
+  answerCotainer.classList.remove('wrong');
+  answerCotainer.classList.remove('correct');
+  pokemon1Button.disabled = false;
+  pokemon2Button.disabled = false;
+};
 
 pokemon1Button.addEventListener('click', function() {
+  pokemon1Button.disabled = "disabled";
+  pokemon2Button.disabled = "disabled";
   scoreChange(0);
-  setTimeout(() => {
-    getFighters()
-    answerCotainer.innerHTML = "VS";
-    answerCotainer.classList.remove('wrong');
-    answerCotainer.classList.remove('correct');
-  }, 1000);
+  setTimeout(newFight, 1000);
 });
 
 pokemon2Button.addEventListener('click', () => {
+  pokemon1Button.disabled = "disabled";
+  pokemon2Button.disabled = "disabled";
   scoreChange(1);
-  setTimeout(() => {
-    answerCotainer.innerHTML = "VS";
-    answerCotainer.classList.remove('wrong');
-    answerCotainer.classList.remove('correct');
-    getFighters()
-  }, 1000);
+  setTimeout(newFight, 1000);
 });
 
+instructionsButton.addEventListener('click', () => {
+  instructionsCotainer.style.display = 'none';
+});
+
+howToPlay.addEventListener('click', () =>{
+  instructionsCotainer.style.display = 'block';
+});
 getFighters()

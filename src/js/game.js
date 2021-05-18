@@ -27,7 +27,7 @@ const changeFighter = (pokemon, pokemonContainer, pokemonButton) => {
 };
 
 const changeComparedStat = (comparedStat) =>{
-  const statsName = ["Health Points", "Attack Points", "Defense Points", "Special Attack Points", "Special Defense Points", "speed"];
+  const statsName = ["Health Points", "Attack Points", "Defense Points", "Special Attack Points", "Special Defense Points", "Speed Points"];
   statContainer.innerHTML = `Which pokemon has more ${statsName[comparedStat]}`;
   pokemon1ComparedStat = Object.values(pokemon1Stats)[comparedStat];
   pokemon2ComparedStat = Object.values(pokemon2Stats)[comparedStat];

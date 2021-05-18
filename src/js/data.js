@@ -93,16 +93,40 @@ export const getPokemons = async (idPokemon, amount) => {
  * @param {string} - A type.
  * @return {array[pokemon]} A list of pokemon objects of the same type.
  */
-export const getPokemonsbyType = () => {
-  // ...
+export const getPokemonsbyType = async (amount, type) => {
+  let pokemons = [];
+  let pokemonNameList;
+  try{
+    const typeUrl = `https://pokeapi.co/api/v2/type/${type}`;
+    const resp = await fetch(typeUrl);
+    if (!resp.ok) throw 'The request could not be fulfilled';
+    let { pokemon } = await resp.json();
+    pokemon = pokemon.slice(0,amount);
+    pokemonNameList = pokemon.map((element) => element.pokemon.name);
+  }
+  catch (err) {
+    throw err;
+  }
+
+  for (let i = 0; i < amount ; i++){
+    let pokemon = await getPokemon(pokemonNameList[i]);
+    pokemons.push(pokemon);
+  }
+  return pokemons;
 }
 /**
  * Get random pokemon
  * @param {number} - The amount of pokemon.
- * @return {array[pokemon, pokemon]} Two pokemon objects.
+ * @return {array[pokemon]} A list of pokemon objects
  */
-export const getRandomPokemons = () => {
-  // ...
+export const getRandomPokemons = async (amount) => {
+  let pokemons = [];
+  for (let i = 1; i <= amount ; i++){
+    let randomId = Math.floor(Math.random() * 149) + 1;
+    let pokemon = await getPokemon(randomId);
+    pokemons.push(pokemon);
+  }
+  return pokemons;
 }
   /**
    * Convert the weight of hectograms to kilograms.

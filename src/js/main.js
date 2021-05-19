@@ -36,24 +36,23 @@ for (let item of suggestions){
 }
 //search a  pokemon
 
-let $status = document.getElementsByClassName("statusSearch");
+let $status = document.querySelector(".statusSearch");
 
 document.addEventListener("keypress", async e => {
   if (e.target.matches("#search")) {
-    // console.log(e.key);
     if (e.key === "Enter") {
+      $status.innerHTML = ``;
       try {
         let query = e.target.value.toLowerCase();
         let newPokemon = await getPokemon(query);
-        if (typeof newPokemon != 'object') {
-          $status.innerHTML = `<p>No existen resultados</p>`;
-          console.log('No existen resultados');
+        if (typeof newPokemon != 'object' || newPokemon == false) {
+          $status.style.color = "red";
+          $status.innerHTML = `<p>No results were found. Please try again.</p>`;
         } else {
           localStorage.setItem("pokemon", query);
           location.href = './wiki.html';
         }
       }catch (err) {
-        $status.innerHTML = `<p>No existen resultados</p>`;
       }
     }
   }

@@ -10,6 +10,11 @@
   align-items: center;
   margin-block: 2rem;
 }
+/* Status search   */
+.statusSearch{
+  display: flex;
+  justify-content: center;
+}
 /* Image of the pokemon */
 .info-img img{
   border-radius: 5%;

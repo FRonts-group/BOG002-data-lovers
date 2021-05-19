@@ -152,29 +152,31 @@ showRadarChart(firstPokemonStats);
 showSuggestedPokemons();
 
 const d = document;
-let $status = d.getElementsByClassName("statusSearch");
+let $status = d.querySelector(".statusSearch");
 
 d.addEventListener("keypress", async e =>{
   if(e.target.matches("#search")){
     if(e.key === "Enter"){
+      $status.innerHTML = ``;
       try{
           let query = e.target.value.toLowerCase();
           let newPokemon = await getPokemon(query);
-          if (typeof newPokemon != 'object') {
-            $status.innerHTML = `<p>No existen resultados</p>`;
-            console.log('No existen resultados');
-          } else {
-            localStorage.setItem("pokemon", query);
-            let newPokemonStats = await getPokemonStats(query);
-            showPokemon(newPokemon);
-            showStatsBar(newPokemonStats);
-            showRadarChart(newPokemonStats);
-          }
-      }
+        if (typeof newPokemon != 'object' || newPokemon == false) {
+          $status.style.color = "red";
+          $status.innerHTML = `<p>No results were found. Please try again.</p>`;
+        } else {
+          localStorage.setItem("pokemon", query);
+          let newPokemonStats = await getPokemonStats(query);
+          showPokemon(newPokemon);
+          showStatsBar(newPokemonStats);
+          showRadarChart(newPokemonStats);
+        }
+        }
 
-      catch(err){
-        let message = err.statusText || "An error occurred";
-        $status.innerHTML = `<p>Error ${err.status}:${message}</p><p>No existen resultados</p>`;
+        catch(err){
+          let message = err.statusText || "An error occurred";
+          // $status.style.color = "red"
+        // $status.innerHTML = `<p>Error ${err.status}:${message}</p><p>No results were found. Please try again.</p>`;
       }
     }
   }

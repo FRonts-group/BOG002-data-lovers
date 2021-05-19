@@ -148,7 +148,8 @@ let firstPokemonStats = await getPokemonStats(idPokemon);
 // console.log(firstPokemonStats);
 showPokemon(firstPokemon);
 showStatsBar(firstPokemonStats);
-
+showRadarChart(firstPokemonStats);
+showSuggestedPokemons();
 
 const d = document;
 let $status = d.getElementsByClassName("statusSearch");
@@ -167,6 +168,7 @@ d.addEventListener("keypress", async e =>{
             let newPokemonStats = await getPokemonStats(query);
             showPokemon(newPokemon);
             showStatsBar(newPokemonStats);
+            showRadarChart(newPokemonStats);
           }
       }
 

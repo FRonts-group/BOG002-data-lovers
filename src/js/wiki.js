@@ -81,10 +81,11 @@ const showStatsBar = function (pokemonStats) {
 }
 
 const showSuggestedPokemons = async () => {
+  let moves = document.querySelector('.moves');
   const pokemonsByType = await getPokemonsbyType(8, firstPokemon.types[0]);
   console.log(pokemonsByType)
   for (let item of pokemonsByType) {
-
+    moves.innerText = item.moves;
     containerCarousel.innerHTML += `
     <div class="pokemon-card">
     <img src=${item.image} alt="Pokemon">

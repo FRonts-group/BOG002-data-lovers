@@ -10,8 +10,9 @@ export default class Pokemon {
      * @param {string} image - The url of the pokemon image.
      * @param {array[type]} types - A list of details showing types this Pokémon has.
      * @param {array[form]} forms - A list of forms this Pokémon can take on.
+     * @param {string} moves - A list of moves of the pokemon.
      */
-  constructor( id, name, height, weight, abilities, image, types, forms) {
+  constructor(id, name, height, weight, abilities, image, types, forms, moves) {
     this.id = id;
     this.name = name;
     this.height = height;
@@ -20,6 +21,7 @@ export default class Pokemon {
     this.image = image;
     this.types = types;
     this.forms = forms;
+    this.moves = moves;
   }
 }
 

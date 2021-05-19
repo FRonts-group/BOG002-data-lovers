@@ -29,28 +29,46 @@
     <main class="game-main">
       <!-- Pokemon duel -->
       <section class="fight-container">
-        <div class="pokemon-fight-container">
-          <img src="./assets/images/charizard-3D.jpg" alt="Pokemon1">
-          <h3>Pokemon 1</h3>
+        <div class="pokemon-fight-container" id="pokemon1">
+          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Pokemon1">
+          <h3>Bulbasaur</h3>
         </div>
-        <h2>VS</h2>
-        <div class="pokemon-fight-container">
-          <img src="./assets/images/charizard-3D.jpg" alt="Pokemon2">
-          <h3>Pokemon 2</h3>
+        <h2 id="correct-answer">VS</h2>
+        <div class="pokemon-fight-container" id="pokemon2">
+          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" alt="Pokemon2">
+          <h3>Ivysaur</h3>
         </div>
       </section>
       <!-- Buttons to choice te winner with specific stat -->
       <section class="choices--container">
-        <button id="first">Pokemon 1<span class="logo-container" ></span></button>
-        <button id="second">Pokemon 2<span class="logo-container" ></span></button>
+        <button id="first">Ivysaur<span class="logo-container" ></span></button>
+        <button id="second">Bulbasaur<span class="logo-container" ></span></button>
       </section>
-      <h3>Which one has more ...</h3>
+      <h3 id="statCompared">Which pokemon has more Health Points</h3>
       <!-- Info about the game and score -->
       <section class="game-info--container">
-        <h2 id="score">Score: <span>0</span></h2>
+        <h2 id="score">Score: <span id="spanScore">0</span></h2>
         <h2 id="howToPlay"><span class="logo-container"></span> How to play</h2>
       </section>
     </main>
+    <div class="backdrop"id="instructions-container">
+      <div class="how-play--container">
+        <h2>Game Instructions</h2>
+        <p>You have to guess which pokemon has a greater stat in one of the following stats:</p>
+        <ul>
+          <li>Health Points</li>
+          <li>Attack Points</li>
+          <li>Defense Points</li>
+          <li>Special Attack Points</li>
+          <li>Special Defense Points</li>
+          <li>Speed Points</li>
+        </ul>
+        <p>You see the stat to be compared under the buttons with the name of each pokemon.</p>
+        <p>Then you have to choose which one has the greater stat with the buttons.</p>
+        <p>Your score increases if you get a correct answer.</p>
+        <button id="intruction-hide-button">PLAY</button>
+      </div>
+    </div>
   </div>
   <footer>
     <div>
@@ -62,6 +80,6 @@
       <span class="logo-container"></span> Check out our repository in Github
     </a>
   </footer>
-  <script src="./js/main.js" type="module"></script>
+  <script src="./js/game.js" type="module"></script>
 </body>
 </html>

@@ -1,4 +1,7 @@
 /* Game styles */
+#root {
+  position: relative;
+}
 .game-main{
   width: 100%;
   max-width: 1100px;
@@ -25,6 +28,12 @@
   width: 100%;
   border-radius: 13px;
   object-fit: contain;
+}
+.game-main .fight-container .wrong{
+  color: var(--errorColor);
+}
+.game-main .fight-container .correct{
+  color: var(--primary);
 }
 .game-main .choices--container{
   width: 95%;
@@ -80,6 +89,56 @@
   background-image: url('../assets/icons/info.svg');
   vertical-align: text-top;
 }
+.game-main .game-info--container #howToPlay{
+  cursor: pointer;
+}
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+.how-play--container {
+  width: 85%;
+  max-width: 500px;
+  margin: auto;
+  padding: 3% 5%;
+  border-radius: 24px;
+  background-color: var(--secondary);
+  color: var(--TextBlack);
+  position: absolute;
+  top: 25%;
+  left: 2vw;
+  right: 2vw;
+  text-align: center;
+}
+.how-play--container h2{
+  margin: 15px 0;
+  font-weight: bold;
+  text-align: center;
+}
+.how-play--container p{
+  text-align: left;
+  margin: 5px 0;
+}
+.how-play--container ul{
+  display: inline-block
+}
+.how-play--container button{
+  display: block;
+  width: 80%;
+  max-width: 400px;
+  height: 50px;
+  margin: 20px auto;
+  padding: 12px 10px;
+  border: 0;
+  background-color: var(--primaryVariant);
+  border-radius: 8px;
+  font: var(--paragraphBold);
+  cursor: pointer;
+}
 @media only screen and (min-width: 425px) {
   .game-main .fight-container h2{
     margin: 5px 0;
@@ -105,5 +164,15 @@
   }
   .game-main .game-info--container #score{
     order: 2;
+  }
+  .game-main .choices--container #first{
+    background-color: var(--secondary);
+    order: 1;
+  }
+  .game-main .choices--container #second{
+    background-color: var(--primary);
+  }
+  .game-main .choices--container button span{
+    display: none;
   }
 }

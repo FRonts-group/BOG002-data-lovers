@@ -9,19 +9,33 @@ import Stats from './stats.js';
     try{
       const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${idPokemon}`;
       const resp = await fetch(pokemonUrl);
-
+      if (resp.status != '200') return false;
       if (!resp.ok) throw 'The request could not be fulfilled';
-
-      const { id, name, height, weight, abilities, types, forms, sprites } = await resp.json();
+      const { id, name, height, weight, abilities, types, forms, sprites, moves } = await resp.json();
 
       //Get only the elements you need from each tribute.
       let nameNew = name.replace(/\b\w/g, l => l.toUpperCase());
+      nameNew = nameNew.replace('-', ' ');
+
       let abilitiesNew = []; let typesNew = []; let formsNew = [];
-      abilities.forEach(element => abilitiesNew.push(element.ability.name));
-      types.forEach(element => typesNew.push(element.type.name));
-      forms.forEach(element => formsNew.push(element.name));
+      //Remove -  from the text and change the first letters to uppercase.
+      abilities.forEach(element => {
+        let abilityName = element.ability.name;
+        abilityName = abilityName.replace('-', ' ');
+        abilityName = abilityName.replace(/\b\w/g, l => l.toUpperCase());
+        abilitiesNew.push(abilityName);
+      });
+      types.forEach(element => typesNew.push(element.type.name.replace(/\b\w/g, l => l.toUpperCase())));
+      forms.forEach(element => formsNew.push(element.name.replace(/\b\w/g, l => l.toUpperCase())));
+
+      //Concatenate all movements in a string
+      let descriptionNew = 'Moves: ';
+      moves.forEach(element => {
+        descriptionNew += `${element.move.name}, `;
+      })
+      // console.log(descriptionNew);
       let pokemon = new Pokemon(parseInt(id), nameNew, fromHectograms(height), fromDecimeters(weight),
-        abilitiesNew, sprites.front_default, typesNew, formsNew);
+        abilitiesNew, sprites.front_default, typesNew, formsNew, descriptionNew);
 
       return pokemon;
     }
@@ -96,6 +110,7 @@ export const getPokemons = async (idPokemon, amount) => {
 export const getPokemonsbyType = async (amount, type) => {
   let pokemons = [];
   let pokemonNameList;
+  type = type.toLowerCase();
   try{
     const typeUrl = `https://pokeapi.co/api/v2/type/${type}`;
     const resp = await fetch(typeUrl);

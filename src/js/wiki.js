@@ -1,7 +1,7 @@
 import { getPokemon, getPokemonStats, getPokemonsbyType } from './data.js';
 
 let containerCarousel = document.querySelector('#suggested-pokemon');
-
+let status = document.querySelector(".statusSearch");
 // show the pokemon in wiki
 const showPokemon = function (pokemon) {
   let image = document.querySelector('.image-pokemon');
@@ -80,13 +80,11 @@ const showStatsBar = function (pokemonStats) {
 
 }
 
-let firstPokemon = await getPokemon(12);
-
 const showSuggestedPokemons = async () => {
+  let moves = document.querySelector('.moves');
   const pokemonsByType = await getPokemonsbyType(8, firstPokemon.types[0]);
-  console.log(pokemonsByType)
-  for (let item of pokemonsByType){
-
+  for (let item of pokemonsByType) {
+    moves.innerText = item.moves;
     containerCarousel.innerHTML += `
     <div class="pokemon-card">
     <img src=${item.image} alt="Pokemon">
@@ -95,13 +93,24 @@ const showSuggestedPokemons = async () => {
     <p>Type: ${item.types[0]} <br>
     Height: ${item.height} cm <br>
     Weight: ${item.weight} kg </p>
-    <button>More</button>
+    <button value="${item.id}"  class="button-card">More</button>
     </div>
     </div>`;
   }
+
+  // add the function to display pokemon in Wiki
+  document.querySelectorAll('.button-card').forEach(card =>
+    card.addEventListener("click", () => {
+      localStorage.setItem("pokemon", card.value);
+      requestPokemon(card.value);
+      window.scroll({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }));
 };
 
-const showRadarChart = function (pokemonStats){
+const showRadarChart = function (pokemonStats) {
   var ctx = document.getElementById('radarChart');
 
   var myChart = new Chart(ctx, {
@@ -144,9 +153,57 @@ const showRadarChart = function (pokemonStats){
     }
   });
 }
-let firstPokemonStats = await getPokemonStats(12);
-console.log(firstPokemonStats);
+const requestPokemon = async (id) => {
+  try {
+    id = id.toLowerCase();
+    let newPokemon = await getPokemon(id);
+    if (typeof newPokemon != 'object' || newPokemon == false) {
+      $status.style.color = "red";
+      $status.innerHTML = `<p>No results were found. Please try again.</p>`;
+    } else {
+      showPokemon(newPokemon);
+      requestStats(id);
+    }
+  }
+
+  catch (err) {
+    // let message = err.statusText || "An error occurred";
+    // status.style.color = "red";
+    // status.innerHTML = `<p>No results were found. Please try again.</p>`;
+
+  }
+}
+const requestStats = async (id) =>{
+  try {
+  localStorage.setItem("pokemon", id);
+  let newPokemonStats = await getPokemonStats(id);
+  showStatsBar(newPokemonStats);
+  showRadarChart(newPokemonStats);
+  showSuggestedPokemons();
+  }
+
+  catch (err) {
+    // let message = err.statusText || "An error occurred";
+    // $status.style.color = "red"
+    // $status.innerHTML = `<p>No results were found. Please try again.</p>`;
+  }
+}
+// show a pokemon
+let idPokemon = localStorage.getItem("pokemon") || 1;
+let firstPokemon = await getPokemon(idPokemon);
 showPokemon(firstPokemon);
-showStatsBar(firstPokemonStats);
-showRadarChart(firstPokemonStats);
-showSuggestedPokemons();
+requestStats(idPokemon);
+
+const d = document;
+let $status = d.querySelector(".statusSearch");
+
+d.addEventListener("keypress", async e =>{
+  if(e.target.matches("#search")){
+    if(e.key === "Enter"){
+      $status.innerHTML = ``;
+      requestPokemon(e.target.value);
+    }
+  }
+  });
+
+

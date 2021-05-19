@@ -1,25 +1,14 @@
-import Pokemon from './pokemon.js';
-import Stats from './stats.js';
-import { getPokemon, getPokemons, getPokemonStats} from './data.js';
-
-// New pokemon id 12
-console.log( await getPokemon(12));
-// New pokemon-stats id 12
-console.log(await getPokemonStats(12));
-// 4 pokemons for the carrusel
-let lots = await getPokemons(4,8);
-console.log(lots);
-
-// Probando pull request
-// let pokemon = new Pokemon(1,'',1,1,1,'',1,1);
-// let stats = new Stats(1,1,1,1,1,1,1);
-// console.log(pokemon,stats);
+// import Pokemon from './pokemon.js';
+// import Stats from './stats.js';
+import { getPokemon, getPokemons} from './data.js';
 
 
 // show the carousel in index
 let amountSuggestions = 8;
 let suggestions = await getPokemons(120, amountSuggestions);
 let containerCarousel = document.querySelector('#suggested-pokemon');
+let status = document.querySelector(".statusSearch");
+// show the content of the cards
 for (let item of suggestions){
 
   containerCarousel.innerHTML += `
@@ -30,7 +19,35 @@ for (let item of suggestions){
   <p>Type: ${item.types[0]} <br>
   Height: ${item.height} cm <br>
   Weight: ${item.weight} kg </p>
-  <button>More</button>
+  <button value="${item.id}"  class="button-card">More</button>
   </div>
   </div>`;
 }
+// add the function to display pokemon in Wiki
+document.querySelectorAll('.button-card').forEach(card =>
+  card.addEventListener("click", () => {
+    localStorage.setItem("pokemon", card.value);
+    location.href = './wiki.html';
+  }));
+
+//search a  pokemon
+
+document.addEventListener("keypress", async e => {
+  if (e.target.matches("#search")) {
+    if (e.key === "Enter") {
+      status.innerHTML = ``;
+      try {
+        let query = e.target.value.toLowerCase();
+        let newPokemon = await getPokemon(query);
+        if (typeof newPokemon != 'object' || newPokemon == false) {
+          status.style.color = "red";
+          status.innerHTML = `<p>No results were found. Please try again.</p>`;
+        } else {
+          localStorage.setItem("pokemon", query);
+          location.href = './wiki.html';
+        }
+      }catch (err) {
+      }
+    }
+  }
+});

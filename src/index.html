@@ -35,9 +35,12 @@
             <p>Here you can find information about any pokemon by its name. <br>This web uses the pokemon API "pokeapi" to get the pokemon data and show it in a friendly way to you. <br>Search any pokemon you want or see one of our suggested pokemons.</p>
           </div>
           <label class="search-input--container" for="search">
-            <span class="logo-container"></span>
-            <input type="text" placeholder="Busca un pokemon..." id="search">
+            <div class="search-logo-container">
+              <span class="logo-container"></span>
+              <input type="search" id="search" placeholder="Search for a pokemon ..." autocomplete="off"></label>
+            </div>
           </label>
+          <div class="statusSearch"></div>
         </section>
         <!-- A list of suggested pokemons -->
         <section class="suggested-pokemon--container" >

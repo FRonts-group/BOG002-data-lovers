@@ -50,6 +50,14 @@
   border-radius: 8px;
   font: var(--h3);
   text-align: center;
+  font: var(--h3);
+  font-weight: bold;
+  cursor: pointer;
+}
+#statCompared{
+  font: var(--h1);
+  font-weight: bold;
+  margin: 20px 0;
 }
 .game-main .choices--container #first{
   background-color: var(--primary);
@@ -89,8 +97,9 @@
   background-image: url('../assets/icons/info.svg');
   vertical-align: text-top;
 }
-.game-main .game-info--container #howToPlay{
+.game-main .game-info--container #howToPlay:hover{
   cursor: pointer;
+  color: var(--primary);
 }
 .backdrop {
   width: 100%;
@@ -136,7 +145,8 @@
   border: 0;
   background-color: var(--primaryVariant);
   border-radius: 8px;
-  font: var(--paragraphBold);
+  font: var(--h3);
+  font-weight: bold;
   cursor: pointer;
 }
 @media only screen and (min-width: 425px) {

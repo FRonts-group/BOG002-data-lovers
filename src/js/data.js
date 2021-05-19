@@ -33,7 +33,7 @@ import Stats from './stats.js';
       moves.forEach(element => {
         descriptionNew += `${element.move.name}, `;
       })
-      console.log(descriptionNew);
+      // console.log(descriptionNew);
       let pokemon = new Pokemon(parseInt(id), nameNew, fromHectograms(height), fromDecimeters(weight),
         abilitiesNew, sprites.front_default, typesNew, formsNew, descriptionNew);
 

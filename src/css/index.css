@@ -223,6 +223,7 @@ header .header-nav--container #game-logo{
   background-color: var(--primaryVariant);
   border-radius: 4px;
   font: var(--paragraphBold);
+  cursor: pointer;
 }
 .home-main .game-info--container{
   width: 90%;

@@ -1,4 +1,3 @@
-@import './chart.css';
 @import './wiki.css';
 @import './game.css';
 
@@ -156,6 +155,9 @@ header .header-nav--container #game-logo{
   background-color: var(--white);
   font: var(--paragraph);
 }
+.home-main .search-input--container input:focus {
+  outline: none;
+}
 .home-main .search-logo-container{
   width: 70%;
   height: 40px;
@@ -258,6 +260,7 @@ header .header-nav--container #game-logo{
   border-radius: 8px;
   font: var(--h3);
   font-weight: bold;
+  cursor: pointer;
 }
 /* Styles of footer */
 footer{
@@ -307,12 +310,12 @@ footer #repository:hover{
 header a:hover{
   color: var(--TextBlack);
 }
+.home-main .game-info--container button:hover,
+.cards-container .pokemon-card .pokemon-info--container button:hover {
+  background: var(--backgroundColor);
+  color: var(--TextWhite);
+}
 @media only screen and (min-width: 425px) {
-  .home-main .search--container span {
-    /* top: 10px; */
-    /* left: 17%; */
-    /* right: -100%; */
-  }
   .home-main .game-info--container{
     width: 96%;
     padding: 2%;

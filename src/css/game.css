@@ -167,6 +167,16 @@
   font-weight: bold;
   cursor: pointer;
 }
+.game-main .choices--container button:hover,
+.how-play--container button:hover {
+  background: var(--backgroundColor);
+  color: var(--TextWhite);
+}
+.game-main .choices--container #first:hover,
+.game-main .choices--container #second:hover {
+  background: var(--primaryVariant);
+  color: var(--TextBlack);
+}
 @media only screen and (min-width: 425px) {
   .game-main .fight-container h2{
     margin: 5px 0;

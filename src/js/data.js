@@ -15,6 +15,7 @@ import Stats from './stats.js';
 
       //Get only the elements you need from each tribute.
       let nameNew = name.replace(/\b\w/g, l => l.toUpperCase());
+      nameNew = nameNew.replace('-', ' ');
       let abilitiesNew = []; let typesNew = []; let formsNew = [];
       abilities.forEach(element => {
         let abilityName = element.ability.name;

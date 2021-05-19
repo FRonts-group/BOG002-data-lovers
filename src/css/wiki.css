@@ -16,6 +16,11 @@
   justify-content: center;
 }
 /* Image of the pokemon */
+
+.info-img {
+  display: flex;
+  justify-content: center;
+}
 .info-img img{
   border-radius: 5%;
   max-width: 22rem;

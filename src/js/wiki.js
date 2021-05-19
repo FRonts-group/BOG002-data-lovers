@@ -75,9 +75,39 @@ const showStatsBar = function (pokemonStats) {
   });
 
 }
-
-let firstPokemon = await getPokemon(12);
-let firstPokemonStats = await getPokemonStats(12);
-console.log(firstPokemonStats);
+// show a pokemon
+let idPokemon = localStorage.getItem("pokemon") || 1;
+let firstPokemon = await getPokemon(idPokemon);
+let firstPokemonStats = await getPokemonStats(idPokemon);
+// console.log(firstPokemonStats);
 showPokemon(firstPokemon);
 showStatsBar(firstPokemonStats);
+
+
+const d = document;
+let $status = d.getElementsByClassName("statusSearch");
+
+d.addEventListener("keypress", async e =>{
+  if(e.target.matches("#search")){
+    if(e.key === "Enter"){
+      try{
+          let query = e.target.value.toLowerCase();
+          let newPokemon = await getPokemon(query);
+          if (typeof newPokemon != 'object') {
+            $status.innerHTML = `<p>No existen resultados</p>`;
+            console.log('No existen resultados');
+          } else {
+            localStorage.setItem("pokemon", query);
+            let newPokemonStats = await getPokemonStats(query);
+            showPokemon(newPokemon);
+            showStatsBar(newPokemonStats);
+          }
+      }
+
+      catch(err){
+        let message = err.statusText || "An error occurred";
+        $status.innerHTML = `<p>Error ${err.status}:${message}</p><p>No existen resultados</p>`;
+      }
+    }
+  }
+  });

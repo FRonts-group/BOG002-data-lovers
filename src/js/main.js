@@ -1,7 +1,7 @@
 import Pokemon from './pokemon.js';
 import Stats from './stats.js';
 import { getPokemon, getPokemons, getPokemonStats} from './data.js';
-
+/*
 // New pokemon id 12
 console.log( await getPokemon(12));
 // New pokemon-stats id 12
@@ -9,7 +9,7 @@ console.log(await getPokemonStats(12));
 // 4 pokemons for the carrusel
 let lots = await getPokemons(4,8);
 console.log(lots);
-
+*/
 // Probando pull request
 // let pokemon = new Pokemon(1,'',1,1,1,'',1,1);
 // let stats = new Stats(1,1,1,1,1,1,1);
@@ -34,3 +34,27 @@ for (let item of suggestions){
   </div>
   </div>`;
 }
+//search a  pokemon
+
+let $status = document.getElementsByClassName("statusSearch");
+
+document.addEventListener("keypress", async e => {
+  if (e.target.matches("#search")) {
+    // console.log(e.key);
+    if (e.key === "Enter") {
+      try {
+        let query = e.target.value.toLowerCase();
+        let newPokemon = await getPokemon(query);
+        if (typeof newPokemon != 'object') {
+          $status.innerHTML = `<p>No existen resultados</p>`;
+          console.log('No existen resultados');
+        } else {
+          localStorage.setItem("pokemon", query);
+          location.href = './wiki.html';
+        }
+      }catch (err) {
+        $status.innerHTML = `<p>No existen resultados</p>`;
+      }
+    }
+  }
+});

@@ -52,7 +52,7 @@ document.addEventListener("keypress", async e => {
         }
       }catch (err) {
         status.style.color = "red";
-        status.innerHTML = `<p>No results were found. Please try again.</p>`;
+        status.innerHTML = `<p>Something went wrong. Please try again.</p>`;
       }
     }
   }

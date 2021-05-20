@@ -1,0 +1,216 @@
+/* Game styles */
+#root {
+  position: relative;
+}
+.game-main{
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.game-main .fight-container{
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.game-main .fight-container .pokemon-fight-container{
+  width: 45%;
+  max-width: 300px;
+  margin: 5px;
+  align-self: flex-start;
+}
+.game-main .fight-container .pokemon-fight-container:nth-child(1){
+  align-self: flex-end;
+}
+.game-main .fight-container .pokemon-fight-container img{
+  width: 100%;
+  border-radius: 13px;
+  object-fit: contain;
+}
+.game-main .fight-container .wrong{
+  color: var(--errorColor);
+}
+.game-main .fight-container .correct{
+  color: var(--primary);
+}
+.game-main .choices--container{
+  width: 95%;
+  max-width: 800px;
+  margin: 15px auto;
+}
+.game-main .choices--container button{
+  width: 95%;
+  height: 50px;
+  display: block;
+  margin: 5px auto;
+  padding: 5px 38px;
+  border: 0;
+  border-radius: 8px;
+  font: var(--h3);
+  text-align: center;
+  font: var(--h3);
+  font-weight: bold;
+  cursor: pointer;
+}
+#statCompared{
+  font: var(--h1);
+  font-weight: bold;
+  margin: 20px 0;
+}
+.game-main .choices--container #first{
+  background-color: var(--primary);
+}
+.game-main .choices--container #second{
+  background-color: var(--secondary);
+}
+.game-main .choices--container #first span{
+  background-image: url('../assets/icons/up-arrow.svg');
+}
+.game-main .choices--container #second span{
+  background-image: url('../assets/icons/down-arrow.svg');
+}
+.game-main .choices--container button span{
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+  background-position: center;
+  vertical-align: bottom;
+}
+.game-main h3{
+  margin: 10px 0;
+  text-align: center;
+}
+.game-main .game-info--container{
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.game-main .game-info--container h2{
+  margin: 15px 0;
+}
+.game-main .game-info--container .logo-container{
+  width: 35px;
+  height: 35px;
+  background-image: url('../assets/icons/info.svg');
+  vertical-align: text-top;
+}
+.game-main .game-info--container #howToPlay:hover{
+  cursor: pointer;
+  color: var(--primary);
+}
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+.how-play--container {
+  width: 85%;
+  max-width: 500px;
+  margin: auto;
+  padding: 3% 5%;
+  border-radius: 24px;
+  background-color: var(--secondary);
+  color: var(--TextBlack);
+  position: absolute;
+  top: 5%;
+  left: 2vw;
+  right: 2vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  max-height: 80%;
+  overflow: auto;
+}
+  .how-play--container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--primary);
+  outline: 2px solid rgb(147, 167, 187);
+}
+  .how-play--container::-webkit-scrollbar {
+  width: 1em;
+  height: 5px;
+}
+  .how-play--container::-webkit-scrollbar-track {
+  border-radius: 5px;
+  box-shadow: inset 0 0 6px rgba(22, 22, 22, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(22, 22, 22, 0.3);
+}
+.how-play--container h2{
+  margin: 15px 0;
+  font-weight: bold;
+  text-align: center;
+}
+.how-play--container p{
+  text-align: left;
+  margin: 5px 0;
+}
+.how-play--container ul{
+  display: inline-block
+}
+.how-play--container button{
+  display: block;
+  width: 80%;
+  max-width: 400px;
+  height: 50px;
+  margin: 20px auto;
+  padding: 12px 10px;
+  border: 0;
+  background-color: var(--primaryVariant);
+  border-radius: 8px;
+  font: var(--h3);
+  font-weight: bold;
+  cursor: pointer;
+}
+.game-main .choices--container button:hover,
+.how-play--container button:hover {
+  background: var(--backgroundColor);
+  color: var(--TextWhite);
+}
+.game-main .choices--container #first:hover,
+.game-main .choices--container #second:hover {
+  background: var(--primaryVariant);
+  color: var(--TextBlack);
+}
+@media only screen and (min-width: 425px) {
+  .game-main .fight-container h2{
+    margin: 5px 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .game-main .fight-container h2{
+    font-size: 35px;
+  }
+  .game-main .choices--container{
+    display: flex;
+  }
+  .game-main .choices--container button{
+    min-width: 48%;
+    margin: 5px 10px;
+  }
+  .game-main .game-info--container{
+    display: flex;
+    justify-content: space-between;
+  }
+  .game-main .game-info--container #howToPlay{
+    order: 1;
+  }
+  .game-main .game-info--container #score{
+    order: 2;
+  }
+  .game-main .choices--container #first{
+    background-color: var(--secondary);
+    order: 1;
+  }
+  .game-main .choices--container #second{
+    background-color: var(--primary);
+  }
+  .game-main .choices--container button span{
+    display: none;
+  }
+}

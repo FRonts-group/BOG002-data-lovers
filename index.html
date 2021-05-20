@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Wiki Pokemon</title>
+    <link rel = "icon" type = "image/png" href = "./assets/images/pokeball.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css" />
+    <!-- typography Lato   -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet">
+  </head>
+  <body class="body">
+    <div id="root">
+      <header>
+        <div class="header-image--container">
+          <img src="./assets/images/pokemon-logo.png" alt="Logo Pokemon">
+        </div>
+        <div class="header-nav--container">
+          <nav>
+            <ul>
+              <li><a href="index.html"><span class="logo-container" id="home-logo"></span>WIKI</a></li>
+              <li><a href="game.html"><span class="logo-container" id="game-logo"></span>GAME</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main class="home-main">
+        <!-- Info about the page and the search of pokemons -->
+        <section class="search--container">
+          <div class="search-instructions">
+            <h2>Welcome to</h2>
+            <h1>Wiki Pokemon</h1>
+            <p>Here you can find information about any pokemon by its name. <br>This web uses the pokemon API "pokeapi" to get the pokemon data and show it in a friendly way to you. <br>Search any pokemon you want or see one of our suggested pokemons.</p>
+          </div>
+          <label class="search-input--container" for="search">
+            <div class="search-logo-container">
+              <span class="logo-container"></span>
+              <input type="search" id="search" placeholder="Search for a pokemon ..." autocomplete="off"></label>
+            </div>
+          </label>
+          <div class="statusSearch"></div>
+        </section>
+        <!-- A list of suggested pokemons -->
+        <section class="suggested-pokemon--container" >
+          <h2>Suggested Pokemons</h2>
+          <div class="cards-container" id="suggested-pokemon">
+
+          </div>
+        </section>
+        <!-- Info about the game of pokemons -->
+        <section class="game-info--container">
+          <h2>Pokemon Guesser</h2>
+          <p>Do you really know about pokemons? <br>Try it here, see our game to guess which pokemon is more powerful in a random battle. <br>How much can you score?</p>
+          <img src="./assets/images/pokemon-game.jpg" alt="Imagen de batallas pokemon">
+          <button id="game-button">PLAY</button>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <div>
+        <a href="index.html">WIKI</a>
+        <a href="game.html">GAME</a>
+      </div>
+      <p id="collaborators">Made with ♥ by <a href="https://github.com/fabiola29298">Fabiola</a> and <a href="https://github.com/rodrigojgq">Rodrigo</a> </p>
+      <a href="https://github.com/FRonts-group/wiki-pokemon" id="repository">
+        <span class="logo-container"></span> Check out our repository in Github
+      </a>
+    </footer>
+    <script src="./js/main.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+
+.wrapper{
+  padding-inline: 2rem;
+ }
+.h2{
+  font: var(--h2);
+  margin: 0;
+}
+.info{
+  align-items: center;
+  margin-block: 2rem;
+}
+/* Status search   */
+.statusSearch{
+  display: flex;
+  justify-content: center;
+}
+/* Image of the pokemon */
+
+.info-img {
+  display: flex;
+  justify-content: center;
+}
+.info-img img{
+  border-radius: 5%;
+  max-width: 22rem;
+  object-fit: contain;
+}
+/* Information and table */
+.info-text .description{
+  font: var(--paragraph);
+ color: rgba(255, 255, 255, 0.6);
+}
+.info-text .title{
+  font: var(--h1);
+  margin: 0;
+}
+.info-text .info-subtitle{
+  font: var(--paragraphBold);
+  padding-inline-end: 2.5rem;
+}
+.info-text .info-subtitleContent{
+  font: var(--paragraph);
+  color: rgba(255, 255, 255, 0.6);
+}
+.info-text table{
+  border-collapse: collapse;
+  /* width: 80%; */
+}
+.info-text tr{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.info-text td{
+ padding-block-start: 1.5rem;
+ padding-block-end: .5rem;
+}
+/* Style of chart */
+#radarChart, #barChart{
+  background: var(--white);
+  max-height: 22rem;
+  margin-block-end: 2rem;
+  padding: 1rem;
+  max-width: 100%;
+
+}
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  .wrapper{
+    width: 960px;
+    margin: 0 auto;
+   }
+   .content{
+     display: flex;
+     flex-direction: column;
+   }
+   .info{
+   display: flex;
+   gap: 4.25rem;
+  }
+  .info-text .title{
+    font: var(--headline1);
+  }
+  #radarChart{
+    max-width: 22rem;
+  }
+}

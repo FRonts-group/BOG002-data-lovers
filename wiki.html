@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Wiki Pokemon | Wiki</title>
+    <link rel = "icon" type = "image/png" href = "./assets/images/pokeball.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css" />
+    <!-- typography Lato   -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap"
+    rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
+
+  </head>
+  <body class="body">
+    <header>
+      <div class="header-image--container">
+        <a href="index.html" aria-current="page">
+          <img src="./assets/images/pokemon-logo.png" alt="Logo Pokemon">
+        </a>
+      </div>
+      <div class="header-nav--container">
+        <nav>
+          <ul>
+            <li><a href="index.html"><span class="logo-container" id="home-logo"></span>WIKI</a></li>
+            <li><a href="game.html"><span class="logo-container" id="game-logo"></span>GAME</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main  class="home-main">
+      <div class="wrapper">
+        <div class="search--container">
+          <label class="search-input--container" for="search">
+            <div class="search-logo-container">
+              <span class="logo-container"></span>
+              <input type="search" id="search" placeholder="Search for a pokemon ..." autocomplete="off">
+          </label>
+          </div>
+          </label>
+          <div class="statusSearch"></div>
+        </div>
+        <div class="content">
+          <div class="info">
+            <div class="info-img">
+              <img class="image-pokemon" width="400" height="400" src="./assets/images/pokemon-logo.png" alt="Image of a pokemon">
+            </div>
+            <div class="info-text">
+              <p class="title">Lorem ipsum dolor sit</p>
+              <p > <strong>Moves:</strong> <span class="moves">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum, ex sed maximus condimentum, tellus ipsum
+              varius tellus, mattis accumsan urna risus elementum lacus. </span></p>
+              <table class="table">
+              </table>
+            </div>
+          </div>
+          <div class="info">
+            <div class="info-chart">
+              <canvas id="radarChart" width="400" height="400"></canvas>
+            </div>
+            <div class="info-chart">
+              <canvas id="barChart" width="400" height="400"></canvas>
+            </div>
+          </div>
+          <div class="info">
+            <div class="suggested-pokemon--container">
+              <p class="h2">Similar Pokemons</p>
+              <div class="cards-container" id="suggested-pokemon">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div>
+        <a href="index.html">WIKI</a>
+        <a href="game.html">GAME</a>
+      </div>
+      <p id="collaborators">Made with ♥ by <a href="https://github.com/fabiola29298">Fabiola</a> and <a
+          href="https://github.com/rodrigojgq">Rodrigo</a> </p>
+      <a href="https://github.com/FRonts-group/wiki-pokemon" id="repository">
+        <span class="logo-container"></span> Check out our repository in Github
+      </a>
+    </footer>
+    <script src="./js/wiki.js" type="module"></script>
+  </body>
+</html>

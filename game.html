@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wiki Pokemon | Game</title>
+  <link rel = "icon" type = "image/png" href = "./assets/images/pokeball.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/index.css" />
+  <!-- typography Lato   -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap"
+    rel="stylesheet">
+</head>
+<body class="body">
+  <div id="root">
+    <header>
+      <div class="header-image--container">
+        <a href="index.html" aria-current="page">
+          <img src="./assets/images/pokemon-logo.png" alt="Logo Pokemon">
+        </a>
+      </div>
+      <div class="header-nav--container">
+        <nav>
+          <ul>
+            <li><a href="index.html"><span class="logo-container" id="home-logo"></span>WIKI</a></li>
+            <li><a href="game.html"><span class="logo-container" id="game-logo"></span>GAME</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="game-main">
+      <!-- Pokemon duel -->
+      <section class="fight-container">
+        <div class="pokemon-fight-container" id="pokemon1">
+          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Pokemon1">
+          <h3>Bulbasaur</h3>
+        </div>
+        <h2 id="correct-answer">VS</h2>
+        <div class="pokemon-fight-container" id="pokemon2">
+          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" alt="Pokemon2">
+          <h3>Ivysaur</h3>
+        </div>
+      </section>
+      <!-- Buttons to choice te winner with specific stat -->
+      <section class="choices--container">
+        <button id="first">Ivysaur<span class="logo-container" ></span></button>
+        <button id="second">Bulbasaur<span class="logo-container" ></span></button>
+      </section>
+      <h3 id="statCompared">Which pokemon has more Health Points</h3>
+      <!-- Info about the game and score -->
+      <section class="game-info--container">
+        <h2 id="score">Score: <span id="spanScore">0</span></h2>
+        <h2 id="howToPlay"><span class="logo-container"></span> How to play</h2>
+      </section>
+    </main>
+    <div class="backdrop"id="instructions-container">
+      <div class="how-play--container">
+        <h2>Game Instructions</h2>
+        <p>You have to guess which pokemon has a greater stat in one of the following stats:</p>
+        <ul>
+          <li>Health Points</li>
+          <li>Attack Points</li>
+          <li>Defense Points</li>
+          <li>Special Attack Points</li>
+          <li>Special Defense Points</li>
+          <li>Speed Points</li>
+        </ul>
+        <p>You see the stat to be compared under the buttons with the name of each pokemon.</p>
+        <p>Then you have to choose which one has the greater stat with the buttons.</p>
+        <p>Your score increases if you get a correct answer.</p>
+        <button id="intruction-hide-button">PLAY</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div>
+      <a href="index.html">WIKI</a>
+      <a href="game.html">GAME</a>
+    </div>
+    <p id="collaborators">Made with ♥ by <a href="https://github.com/fabiola29298">Fabiola</a> and <a href="https://github.com/rodrigojgq">Rodrigo</a> </p>
+    <a href="https://github.com/FRonts-group/wiki-pokemon" id="repository">
+      <span class="logo-container"></span> Check out our repository in Github
+    </a>
+  </footer>
+  <script src="./js/game.js" type="module"></script>
+</body>
+</html>

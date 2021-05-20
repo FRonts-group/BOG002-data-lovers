@@ -3,11 +3,11 @@
 
 Wiki Pokemon is a web app to check some information about your favorite pokemons. The user can search any pokemon by its name or their number in the pokedex. We get the pokemon information from [PokeAPI](https://pokeapi.co/). Beside the pokemon search, the user is able to prove his knowledge in pokemons with a game to guess which pokemon in a battle has a greater stats between the available stats in the PokeAPI.
 
-To see the web page [click here]()
+To see the web page [click here](https://fronts-group.github.io/wiki-pokemon/)
 
 Wiki Pokemon es una aplicación web para revisar información sobre tus pokemons favoritos. El usuario puede buscar cualquier pokemon por su nombre o su número en la pokedex. Obtenemos la información de Pokémon de [PokeAPI](https://pokeapi.co/). Además de la búsqueda de pokemons, el usuario puede demostrar sus conocimientos en pokemons con un juego para adivinar qué pokemon tiene mejores estadísticas en una batalla entre las estadísticas disponibles en la PokeAPI.
 
-Para ver la página web haz [click aqui]()
+Para ver la página web haz [click aqui](https://fronts-group.github.io/wiki-pokemon/)
 
 
 ## Diseño de Interfaz de Usuario
@@ -38,8 +38,7 @@ A continuación se ven los bocetos realizados para el diseño de las pantallas.
 
 ### Prototipo de Alta Fidelidad
 El prototipo se realizó en Figma, [click aquí para verlo.](https://www.figma.com/file/VgGs1K4E12NQvSA9w4Z94H/PokeWiki?node-id=0%3A1)
-Previsualización en Figma:
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FVgGs1K4E12NQvSA9w4Z94H%2FPokeWiki%3Fnode-id%3D0%253A1" allowfullscreen></iframe>
+![image](./src/assets/images/preview4Figma.png)
 
 ### Previsualizacion de Pantallas
 
@@ -72,7 +71,7 @@ Este proyecto es parte de la ruta del bootcamp de [Laboratoria - Frontend Develo
 
 <div align="center">
   <h3>
-    <a href="#">
+    <a href="https://fronts-group.github.io/wiki-pokemon/">
       Página Web
     </a>
     <span> | </span>
